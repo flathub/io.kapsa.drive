@@ -1,365 +1,365 @@
 {
-  "app-id": "io.kapsa.drive",
-  "runtime": "org.freedesktop.Platform",
-  "runtime-version": "22.08",
-  "sdk": "org.freedesktop.Sdk",
-  "sdk-extensions": [
-    "org.freedesktop.Sdk.Extension.vala"
-  ],
-  "command": "s3drive",
-  "separate-locales": false,
-  "build-options": {
-    "append-path": "/usr/lib/sdk/vala/bin",
-    "prepend-ld-library-path": "/usr/lib/sdk/vala/lib"
-  },
-  "finish-args": [
-    "--share=ipc",
-    "--socket=fallback-x11",
-    "--socket=wayland",
-    "--device=dri",
-    "--socket=pulseaudio",
-    "--share=network",
-    "--filesystem=xdg-pictures:ro",
-    "--filesystem=xdg-videos:ro",
-    "--filesystem=xdg-download"
-  ],
-  "modules": [
-    {
-      "name": "libmpv",
-      "cleanup": [
-        "/include",
-        "/lib/pkgconfig",
-        "/share/man"
-      ],
-      "buildsystem": "simple",
-      "build-commands": [
-        "python3 waf configure --prefix=/app --enable-libmpv-shared --disable-cplayer --disable-build-date --disable-alsa",
-        "python3 waf build",
-        "python3 waf install"
-      ],
-      "sources": [
-        {
-          "type": "archive",
-          "url": "https://github.com/mpv-player/mpv/archive/refs/tags/v0.34.1.tar.gz",
-          "sha256": "32ded8c13b6398310fa27767378193dc1db6d78b006b70dbcbd3123a1445e746"
-        },
-        {
-          "type": "file",
-          "url": "https://waf.io/waf-2.0.25",
-          "sha256": "21199cd220ccf60434133e1fd2ab8c8e5217c3799199c82722543970dc8e38d5",
-          "dest-filename": "waf"
-        }
-      ],
-      "modules": [
-        {
-          "name": "libv4l2",
-          "cleanup": [
-            "/sbin",
-            "/bin",
-            "/include",
-            "/lib/*.la",
-            "/lib/*/*.la",
-            "/lib*/*/*/*.la",
-            "/lib/pkgconfig",
-            "/share/man"
-          ],
-          "config-opts": [
-            "--disable-static",
-            "--disable-bpf",
-            "--with-udevdir=/app/lib/udev"
-          ],
-          "sources": [
-            {
-              "type": "archive",
-              "url": "https://linuxtv.org/downloads/v4l-utils/v4l-utils-1.22.1.tar.bz2",
-              "sha256": "65c6fbe830a44ca105c443b027182c1b2c9053a91d1e72ad849dfab388b94e31"
-            }
-          ]
-        },
-        {
-          "name": "nv-codec-headers",
-          "cleanup": [
-            "*"
-          ],
-          "no-autogen": true,
-          "make-install-args": [
-            "PREFIX=/app"
-          ],
-          "sources": [
-            {
-              "type": "archive",
-              "url": "https://github.com/FFmpeg/nv-codec-headers/releases/download/n11.1.5.2/nv-codec-headers-11.1.5.2.tar.gz",
-              "sha256": "1442e3159e7311dd71f8fca86e615f51609998939b6a6d405d6683d8eb3af6ee"
-            }
-          ]
-        },
-        {
-          "name": "ffmpeg",
-          "cleanup": [
-            "/include",
-            "/lib/pkgconfig",
-            "/share/ffmpeg/examples"
-          ],
-          "config-opts": [
-            "--enable-shared",
-            "--disable-static",
-            "--enable-gnutls",
-            "--enable-gpl",
-            "--disable-doc",
-            "--disable-programs",
-            "--disable-encoders",
-            "--disable-muxers",
-            "--enable-encoder=png,libwebp",
-            "--enable-libv4l2",
-            "--enable-libdav1d",
-            "--enable-libfontconfig",
-            "--enable-libfreetype",
-            "--enable-libopus",
-            "--enable-librsvg",
-            "--enable-libvpx",
-            "--enable-libmp3lame",
-            "--enable-libwebp"
-          ],
-          "sources": [
-            {
-              "type": "archive",
-              "url": "https://ffmpeg.org/releases/ffmpeg-5.1.3.tar.gz",
-              "sha256": "ac1b734adc57333ffbb603d9d5b70a4133f10d76380085c61c77fa3537f63e95"
-            }
-          ]
-        },
-        {
-          "name": "libass",
-          "cleanup": [
-            "/include",
-            "/lib/*.la",
-            "/lib/pkgconfig"
-          ],
-          "config-opts": [
-            "--disable-static"
-          ],
-          "sources": [
-            {
-              "type": "archive",
-              "url": "https://github.com/libass/libass/releases/download/0.17.0/libass-0.17.0.tar.gz",
-              "sha256": "72b9ba5d9dd1ac6d30b5962f38cbe7aefb180174f71d8b65c5e3c3060dbc403f"
-            }
-          ]
-        },
-        {
-          "name": "uchardet",
-          "buildsystem": "cmake-ninja",
-          "config-opts": [
-            "-DCMAKE_BUILD_TYPE=Release",
-            "-DBUILD_STATIC=0"
-          ],
-          "cleanup": [
-            "/bin",
-            "/include",
-            "/lib/pkgconfig",
-            "/share/man"
-          ],
-          "sources": [
-            {
-              "type": "archive",
-              "url": "https://gitlab.freedesktop.org/uchardet/uchardet/-/archive/v0.0.8/uchardet-v0.0.8.tar.gz",
-              "sha256": "5aa402a1b5b1dbb8d81096f141ff1224e079f4d3a1db0f79ecca782756d3a416"
-            }
-          ]
-        }
-      ]
+    "app-id": "io.kapsa.drive",
+    "runtime": "org.freedesktop.Platform",
+    "runtime-version": "22.08",
+    "sdk": "org.freedesktop.Sdk",
+    "sdk-extensions": [
+        "org.freedesktop.Sdk.Extension.vala"
+    ],
+    "command": "s3drive",
+    "separate-locales": false,
+    "build-options": {
+        "append-path": "/usr/lib/sdk/vala/bin",
+        "prepend-ld-library-path": "/usr/lib/sdk/vala/lib"
     },
-    "shared-modules/intltool/intltool-0.51.json",
-    {
-      "name": "libdbusmenu-gtk3",
-      "buildsystem": "autotools",
-      "build-options": {
-        "cflags": "-Wno-error",
-        "env": {
-          "HAVE_VALGRIND_FALSE": "#",
-          "HAVE_VALGRIND_TRUE": ""
-        }
-      },
-      "config-opts": [
-        "--with-gtk=3",
-        "--disable-dumper",
-        "--disable-static",
-        "--disable-tests",
-        "--disable-gtk-doc",
-        "--enable-introspection=no",
-        "--disable-vala"
-      ],
-      "sources": [
+    "finish-args": [
+        "--share=ipc",
+        "--socket=fallback-x11",
+        "--socket=wayland",
+        "--device=dri",
+        "--socket=pulseaudio",
+        "--share=network",
+        "--filesystem=xdg-pictures:ro",
+        "--filesystem=xdg-videos:ro",
+        "--filesystem=xdg-download"
+    ],
+    "modules": [
         {
-          "type": "archive",
-          "url": "https://launchpad.net/libdbusmenu/16.04/16.04.0/+download/libdbusmenu-16.04.0.tar.gz",
-          "sha256": "b9cc4a2acd74509435892823607d966d424bd9ad5d0b00938f27240a1bfa878a"
-        }
-      ],
-      "cleanup": [
-        "/include",
-        "/libexec",
-        "/lib/pkgconfig",
-        "/lib/*.la",
-        "/share/doc",
-        "/share/libdbusmenu",
-        "/share/gtk-doc",
-        "/share/gir-1.0"
-      ]
-    },
-    {
-      "name": "ayatana-ido",
-      "buildsystem": "cmake-ninja",
-      "sources": [
+            "name": "libmpv",
+            "cleanup": [
+                "/include",
+                "/lib/pkgconfig",
+                "/share/man"
+            ],
+            "buildsystem": "simple",
+            "build-commands": [
+                "python3 waf configure --prefix=/app --enable-libmpv-shared --disable-cplayer --disable-build-date --disable-alsa",
+                "python3 waf build",
+                "python3 waf install"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/mpv-player/mpv/archive/refs/tags/v0.34.1.tar.gz",
+                    "sha256": "32ded8c13b6398310fa27767378193dc1db6d78b006b70dbcbd3123a1445e746"
+                },
+                {
+                    "type": "file",
+                    "url": "https://waf.io/waf-2.0.25",
+                    "sha256": "21199cd220ccf60434133e1fd2ab8c8e5217c3799199c82722543970dc8e38d5",
+                    "dest-filename": "waf"
+                }
+            ],
+            "modules": [
+                {
+                    "name": "libv4l2",
+                    "cleanup": [
+                        "/sbin",
+                        "/bin",
+                        "/include",
+                        "/lib/*.la",
+                        "/lib/*/*.la",
+                        "/lib*/*/*/*.la",
+                        "/lib/pkgconfig",
+                        "/share/man"
+                    ],
+                    "config-opts": [
+                        "--disable-static",
+                        "--disable-bpf",
+                        "--with-udevdir=/app/lib/udev"
+                    ],
+                    "sources": [
+                        {
+                            "type": "archive",
+                            "url": "https://linuxtv.org/downloads/v4l-utils/v4l-utils-1.22.1.tar.bz2",
+                            "sha256": "65c6fbe830a44ca105c443b027182c1b2c9053a91d1e72ad849dfab388b94e31"
+                        }
+                    ]
+                },
+                {
+                    "name": "nv-codec-headers",
+                    "cleanup": [
+                        "*"
+                    ],
+                    "no-autogen": true,
+                    "make-install-args": [
+                        "PREFIX=/app"
+                    ],
+                    "sources": [
+                        {
+                            "type": "archive",
+                            "url": "https://github.com/FFmpeg/nv-codec-headers/releases/download/n11.1.5.2/nv-codec-headers-11.1.5.2.tar.gz",
+                            "sha256": "1442e3159e7311dd71f8fca86e615f51609998939b6a6d405d6683d8eb3af6ee"
+                        }
+                    ]
+                },
+                {
+                    "name": "ffmpeg",
+                    "cleanup": [
+                        "/include",
+                        "/lib/pkgconfig",
+                        "/share/ffmpeg/examples"
+                    ],
+                    "config-opts": [
+                        "--enable-shared",
+                        "--disable-static",
+                        "--enable-gnutls",
+                        "--enable-gpl",
+                        "--disable-doc",
+                        "--disable-programs",
+                        "--disable-encoders",
+                        "--disable-muxers",
+                        "--enable-encoder=png,libwebp",
+                        "--enable-libv4l2",
+                        "--enable-libdav1d",
+                        "--enable-libfontconfig",
+                        "--enable-libfreetype",
+                        "--enable-libopus",
+                        "--enable-librsvg",
+                        "--enable-libvpx",
+                        "--enable-libmp3lame",
+                        "--enable-libwebp"
+                    ],
+                    "sources": [
+                        {
+                            "type": "archive",
+                            "url": "https://ffmpeg.org/releases/ffmpeg-5.1.3.tar.gz",
+                            "sha256": "ac1b734adc57333ffbb603d9d5b70a4133f10d76380085c61c77fa3537f63e95"
+                        }
+                    ]
+                },
+                {
+                    "name": "libass",
+                    "cleanup": [
+                        "/include",
+                        "/lib/*.la",
+                        "/lib/pkgconfig"
+                    ],
+                    "config-opts": [
+                        "--disable-static"
+                    ],
+                    "sources": [
+                        {
+                            "type": "archive",
+                            "url": "https://github.com/libass/libass/releases/download/0.17.0/libass-0.17.0.tar.gz",
+                            "sha256": "72b9ba5d9dd1ac6d30b5962f38cbe7aefb180174f71d8b65c5e3c3060dbc403f"
+                        }
+                    ]
+                },
+                {
+                    "name": "uchardet",
+                    "buildsystem": "cmake-ninja",
+                    "config-opts": [
+                        "-DCMAKE_BUILD_TYPE=Release",
+                        "-DBUILD_STATIC=0"
+                    ],
+                    "cleanup": [
+                        "/bin",
+                        "/include",
+                        "/lib/pkgconfig",
+                        "/share/man"
+                    ],
+                    "sources": [
+                        {
+                            "type": "archive",
+                            "url": "https://gitlab.freedesktop.org/uchardet/uchardet/-/archive/v0.0.8/uchardet-v0.0.8.tar.gz",
+                            "sha256": "5aa402a1b5b1dbb8d81096f141ff1224e079f4d3a1db0f79ecca782756d3a416"
+                        }
+                    ]
+                }
+            ]
+        },
+        "shared-modules/intltool/intltool-0.51.json",
         {
-          "type": "git",
-          "url": "https://github.com/AyatanaIndicators/ayatana-ido.git",
-          "tag": "0.9.1"
-        }
-      ]
-    },
-    {
-      "name": "libayatana-indicator",
-      "buildsystem": "cmake-ninja",
-      "sources": [
-        {
-          "type": "git",
-          "url": "https://github.com/AyatanaIndicators/libayatana-indicator.git",
-          "tag": "0.9.1"
-        }
-      ]
-    },
-    {
-      "name": "libayatana-appindicator",
-      "buildsystem": "cmake-ninja",
-      "config-opts": [
-        "-DENABLE_BINDINGS_MONO=NO",
-        "-DENABLE_BINDINGS_VALA=NO"
-      ],
-      "sources": [
-        {
-          "type": "git",
-          "url": "https://github.com/AyatanaIndicators/libayatana-appindicator.git",
-          "tag": "0.5.90"
-        }
-      ]
-    },
-    {
-      "name": "libjson",
-      "buildsystem": "meson",
-      "sources": [
-        {
-          "type": "archive",
-          "url": "https://github.com/open-source-parsers/jsoncpp/archive/refs/tags/1.9.5.zip",
-          "sha256": "a074e1b38083484e8e07789fd683599d19da8bb960959c83751cd0284bdf2043"
-        }
-      ]
-    },
-    {
-      "name": "libsecret",
-      "buildsystem": "meson",
-      "config-opts": [
-        "-Dmanpage=false",
-        "-Dvapi=false",
-        "-Dgtk_doc=false",
-        "-Dintrospection=false"
-      ],
-      "cleanup": [
-        "/bin",
-        "/include",
-        "/lib/pkgconfig",
-        "/share/man"
-      ],
-      "sources": [
-        {
-          "type": "archive",
-          "url": "https://download.gnome.org/sources/libsecret/0.20/libsecret-0.20.5.tar.xz",
-          "sha256": "3fb3ce340fcd7db54d87c893e69bfc2b1f6e4d4b279065ffe66dac9f0fd12b4d"
-        }
-      ]
-    },
-    {
-      "name": "libsodium",
-      "sources": [
-        {
-          "type": "archive",
-          "url": "https://github.com/jedisct1/libsodium/archive/1.0.18-RELEASE.tar.gz",
-          "sha256": "b7292dd1da67a049c8e78415cd498ec138d194cfdb302e716b08d26b80fecc10",
-          "x-checker-data": {
-            "type": "anitya",
-            "project-id": 1728,
-            "url-template": "https://github.com/jedisct1/libsodium/archive/$version.tar.gz"
-          }
-        }
-      ],
-      "post-install": [
-        "install -Dm644 LICENSE ${FLATPAK_DEST}/share/licenses/libsodium/LICENSE"
-      ]
-    },
-    {
-      "name": "s3drive",
-      "only-arches": [
-        "x86_64"
-      ],
-      "buildsystem": "simple",
-      "build-commands": [
-        "install apply_extra ${FLATPAK_DEST}/bin",
-        "install s3drive.sh ${FLATPAK_DEST}/bin/s3drive",
-        "install -Dm644 io.kapsa.drive.metainfo.xml ${FLATPAK_DEST}/share/appdata/${FLATPAK_ID}.metainfo.xml",
-        "install -Dm644 s3drive_logo.png ${FLATPAK_DEST}/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.png",
-        "install -Dm644 io.kapsa.drive.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop",
-        "install -Dm755 /usr/bin/ar -t ${FLATPAK_DEST}/bin",
-        "install -Dm755 /usr/lib/$(gcc -print-multiarch)/libbfd-*.so -t ${FLATPAK_DEST}/lib"
-      ],
-      "sources": [
-        {
-          "type": "script",
-          "dest-filename": "apply_extra",
-          "commands": [
-            "ar x s3drive_amd64.deb",
-            "rm -f s3drive_amd64.deb",
-            "tar --use-compress-program=unzstd -xvf data.tar.zst",
-            "rm -f control.tar.zst data.tar.zst debian-binary",
-            "mv usr/* .",
-            "chmod -R a-s,go+rX,go-w .",
-            "rmdir usr"
-          ]
+            "name": "libdbusmenu-gtk3",
+            "buildsystem": "autotools",
+            "build-options": {
+                "cflags": "-Wno-error",
+                "env": {
+                    "HAVE_VALGRIND_FALSE": "#",
+                    "HAVE_VALGRIND_TRUE": ""
+                }
+            },
+            "config-opts": [
+                "--with-gtk=3",
+                "--disable-dumper",
+                "--disable-static",
+                "--disable-tests",
+                "--disable-gtk-doc",
+                "--enable-introspection=no",
+                "--disable-vala"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://launchpad.net/libdbusmenu/16.04/16.04.0/+download/libdbusmenu-16.04.0.tar.gz",
+                    "sha256": "b9cc4a2acd74509435892823607d966d424bd9ad5d0b00938f27240a1bfa878a"
+                }
+            ],
+            "cleanup": [
+                "/include",
+                "/libexec",
+                "/lib/pkgconfig",
+                "/lib/*.la",
+                "/share/doc",
+                "/share/libdbusmenu",
+                "/share/gtk-doc",
+                "/share/gir-1.0"
+            ]
         },
         {
-          "type": "script",
-          "dest-filename": "s3drive.sh",
-          "commands": [
-            "exec env TMPDIR=$XDG_CACHE_HOME /app/extra/local/lib/s3drive/kapsa -s $EXTRA_ARGS \"$@\""
-          ]
+            "name": "ayatana-ido",
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/AyatanaIndicators/ayatana-ido.git",
+                    "tag": "0.9.1"
+                }
+            ]
         },
         {
-          "type": "file",
-          "path": "io.kapsa.drive.metainfo.xml"
+            "name": "libayatana-indicator",
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/AyatanaIndicators/libayatana-indicator.git",
+                    "tag": "0.9.1"
+                }
+            ]
         },
         {
-          "type": "file",
-          "path": "io.kapsa.drive.desktop"
+            "name": "libayatana-appindicator",
+            "buildsystem": "cmake-ninja",
+            "config-opts": [
+                "-DENABLE_BINDINGS_MONO=NO",
+                "-DENABLE_BINDINGS_VALA=NO"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/AyatanaIndicators/libayatana-appindicator.git",
+                    "tag": "0.5.90"
+                }
+            ]
         },
         {
-          "type": "file",
-          "path": "s3drive_logo.png"
+            "name": "libjson",
+            "buildsystem": "meson",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/open-source-parsers/jsoncpp/archive/refs/tags/1.9.5.zip",
+                    "sha256": "a074e1b38083484e8e07789fd683599d19da8bb960959c83751cd0284bdf2043"
+                }
+            ]
         },
         {
-          "type": "extra-data",
-          "filename": "s3drive_amd64.deb",
-          "only-arches": [
-            "x86_64"
-          ],
-          "url": "https://github.com/s3drive/app/releases/download/1.5.1/s3drive_amd64.deb",
-          "sha256": "d0314a54d277c2dfa8ab11c0d9dd63aaab4769d6fff6028842ebf1a817ba9782",
-          "size": 10851828,
-          "x-checker-data": {
-            "type": "anitya",
-            "project-id": 369108,
-            "url-template": "https://github.com/s3drive/app/releases/download/$version/s3drive_amd64.deb"
-          }
+            "name": "libsecret",
+            "buildsystem": "meson",
+            "config-opts": [
+                "-Dmanpage=false",
+                "-Dvapi=false",
+                "-Dgtk_doc=false",
+                "-Dintrospection=false"
+            ],
+            "cleanup": [
+                "/bin",
+                "/include",
+                "/lib/pkgconfig",
+                "/share/man"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.gnome.org/sources/libsecret/0.20/libsecret-0.20.5.tar.xz",
+                    "sha256": "3fb3ce340fcd7db54d87c893e69bfc2b1f6e4d4b279065ffe66dac9f0fd12b4d"
+                }
+            ]
+        },
+        {
+            "name": "libsodium",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/jedisct1/libsodium/archive/1.0.19.tar.gz",
+                    "sha256": "1d281a8a5e299a38e5c16ff60f293bba0796dc0fda8e49bc582d4bc1935572ed",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 1728,
+                        "url-template": "https://github.com/jedisct1/libsodium/archive/$version.tar.gz"
+                    }
+                }
+            ],
+            "post-install": [
+                "install -Dm644 LICENSE ${FLATPAK_DEST}/share/licenses/libsodium/LICENSE"
+            ]
+        },
+        {
+            "name": "s3drive",
+            "only-arches": [
+                "x86_64"
+            ],
+            "buildsystem": "simple",
+            "build-commands": [
+                "install apply_extra ${FLATPAK_DEST}/bin",
+                "install s3drive.sh ${FLATPAK_DEST}/bin/s3drive",
+                "install -Dm644 io.kapsa.drive.metainfo.xml ${FLATPAK_DEST}/share/appdata/${FLATPAK_ID}.metainfo.xml",
+                "install -Dm644 s3drive_logo.png ${FLATPAK_DEST}/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.png",
+                "install -Dm644 io.kapsa.drive.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop",
+                "install -Dm755 /usr/bin/ar -t ${FLATPAK_DEST}/bin",
+                "install -Dm755 /usr/lib/$(gcc -print-multiarch)/libbfd-*.so -t ${FLATPAK_DEST}/lib"
+            ],
+            "sources": [
+                {
+                    "type": "script",
+                    "dest-filename": "apply_extra",
+                    "commands": [
+                        "ar x s3drive_amd64.deb",
+                        "rm -f s3drive_amd64.deb",
+                        "tar --use-compress-program=unzstd -xvf data.tar.zst",
+                        "rm -f control.tar.zst data.tar.zst debian-binary",
+                        "mv usr/* .",
+                        "chmod -R a-s,go+rX,go-w .",
+                        "rmdir usr"
+                    ]
+                },
+                {
+                    "type": "script",
+                    "dest-filename": "s3drive.sh",
+                    "commands": [
+                        "exec env TMPDIR=$XDG_CACHE_HOME /app/extra/local/lib/s3drive/kapsa -s $EXTRA_ARGS \"$@\""
+                    ]
+                },
+                {
+                    "type": "file",
+                    "path": "io.kapsa.drive.metainfo.xml"
+                },
+                {
+                    "type": "file",
+                    "path": "io.kapsa.drive.desktop"
+                },
+                {
+                    "type": "file",
+                    "path": "s3drive_logo.png"
+                },
+                {
+                    "type": "extra-data",
+                    "filename": "s3drive_amd64.deb",
+                    "only-arches": [
+                        "x86_64"
+                    ],
+                    "url": "https://github.com/s3drive/app/releases/download/1.5.2/s3drive_amd64.deb",
+                    "sha256": "d44b620f590d5bdac4b3fc043be65bc7ab4a65a105fbf10fca709a6cfb913ab2",
+                    "size": 10877966,
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 369108,
+                        "url-template": "https://github.com/s3drive/app/releases/download/$version/s3drive_amd64.deb"
+                    }
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }
