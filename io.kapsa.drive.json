@@ -283,13 +283,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/jedisct1/libsodium/archive/1.0.19.tar.gz",
-                    "sha256": "1d281a8a5e299a38e5c16ff60f293bba0796dc0fda8e49bc582d4bc1935572ed",
-                    "x-checker-data": {
-                        "type": "anitya",
-                        "project-id": 1728,
-                        "url-template": "https://github.com/jedisct1/libsodium/archive/$version.tar.gz"
-                    }
+                    "url": "https://github.com/jedisct1/libsodium/archive/1.0.18-RELEASE.tar.gz",
+                    "sha256": "b7292dd1da67a049c8e78415cd498ec138d194cfdb302e716b08d26b80fecc10",
                 }
             ],
             "post-install": [
