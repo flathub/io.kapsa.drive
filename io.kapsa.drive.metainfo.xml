@@ -5,8 +5,10 @@
     <summary>Zero Knowledge E2E encrypted storage compatible with any S3 provider</summary>
     <developer_name>S3Drive</developer_name>
     <url type="homepage">https://s3drive.app</url>
+    <url type="faq">https://s3drive.app/faq</url>
     <url type="contact">https://discord.com/invite/YvxvypRqCu</url>
     <url type="bugtracker">https://discord.com/channels/1069654792902815845/1102236355645419550</url>
+    <url type="help">https://discord.com/channels/1069654792902815845/1102236355645419550</url>
     <metadata_license>CC0</metadata_license>
     <project_license>LicenseRef-proprietary</project_license>
     <supports>
@@ -44,6 +46,8 @@
     </screenshots>
     <content_rating type="oars-1.1"/>
     <releases>
+        <release version="1.5.4" date="2023-09-30"/>
+        <release version="1.5.3" date="2023-09-22"/>
         <release version="1.5.2" date="2023-09-15"/>
         <release version="1.5.1" date="2023-09-08"/>
     </releases>
