@@ -35,13 +35,37 @@
             Our roadmap: https://s3drive.canny.io/ Order by (name, size, modified), Cross-client online sync, Listing cache, ... and many many more, vote in our roadmap and stay tuned !
         </p>
         <p>
-            We would love to hear from you ! Missing some features? App not working as intended? Please visit our Discord or reach us at: support@s3drive.app
+            We would love to hear from you ! Missing some features? App not working as intended? Please visit our Support channel: https://s3drive.app/support
         </p>
     </description>
     <launchable type="desktop-id">io.kapsa.drive.desktop</launchable>
     <screenshots>
         <screenshot type="default">
-            <image>https://s3drive.app/images/linux_desktop.png</image>
+            <image>https://s3drive.app/images/desktop/photo_tiles.png</image>
+        </screenshot>
+        <screenshot>
+            <image>https://s3drive.app/images/desktop/file_context.png</image>
+        </screenshot>
+        <screenshot>
+            <image>https://s3drive.app/images/desktop/photo_preview.png</image>
+        </screenshot>
+        <screenshot>
+            <image>https://s3drive.app/images/desktop/transfers.png</image>
+        </screenshot>
+        <screenshot>
+            <image>https://s3drive.app/images/desktop/video_playout.png</image>
+        </screenshot>
+        <screenshot>
+            <image>https://s3drive.app/images/desktop/profiles.png</image>
+        </screenshot>
+        <screenshot>
+            <image>https://s3drive.app/images/desktop/drawer_menu.png</image>
+        </screenshot>
+        <screenshot>
+            <image>https://s3drive.app/images/desktop/settings.png</image>
+        </screenshot>
+        <screenshot>
+            <image>https://s3drive.app/images/desktop/show_info.png</image>
         </screenshot>
     </screenshots>
     <content_rating type="oars-1.1"/>
