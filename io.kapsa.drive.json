@@ -351,7 +351,7 @@
                     "only-arches": [
                         "x86_64"
                     ],
-                    "url": "https://github.com/s3drive/app/releases/download/1.7.3/s3drive_amd64.deb",
+                    "url": "https://github.com/s3drive/app/releases/download/1.7.4/s3drive_amd64.deb",
                     "sha256": "17422b3ddd5a0cf23dc0794982263ef49d85e50710524334cf1c388fd5217ec5",
                     "size": 47961522,
                     "x-checker-data": {
