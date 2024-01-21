@@ -7,8 +7,8 @@
     <url type="homepage">https://s3drive.app</url>
     <url type="faq">https://s3drive.app/faq</url>
     <url type="contact">https://discord.com/invite/YvxvypRqCu</url>
-    <url type="bugtracker">https://discord.com/channels/1069654792902815845/1102236355645419550</url>
-    <url type="help">https://discord.com/channels/1069654792902815845/1102236355645419550</url>
+    <url type="bugtracker">https://discord.com/invite/YvxvypRqCu</url>
+    <url type="help">https://docs.s3drive.app/setup/providers</url>
     <metadata_license>CC0</metadata_license>
     <project_license>LicenseRef-proprietary</project_license>
     <supports>
@@ -32,7 +32,7 @@
             Support for AWS S3, Backblaze, Wasabi, Cloudflare, MinIO and any other S3 compatible provider. Sign-up for a free account, no credit card required.
         </p>
         <p>
-            Our roadmap: https://s3drive.canny.io/ Order by (name, size, modified), Cross-client online sync, Listing cache, ... and many many more, vote in our roadmap and stay tuned !
+            Our roadmap: https://s3drive.canny.io Order by (name, size, modified), Cross-client online sync, Listing cache, ... and many many more, vote in our roadmap and stay tuned !
         </p>
         <p>
             We would love to hear from you ! Missing some features? App not working as intended? Please visit our Support channel: https://s3drive.app/support
@@ -70,6 +70,8 @@
     </screenshots>
     <content_rating type="oars-1.1"/>
     <releases>
+        <release version="1.7.5" date="2024-01-21"/>
+        <release version="1.7.4" date="2024-01-16"/>
         <release version="1.7.3" date="2024-01-11"/>
         <release version="1.7.2" date="2024-01-05"/>
         <release version="1.7.0" date="2023-12-29"/>
