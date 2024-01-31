@@ -20,22 +20,36 @@
 <!--  Replace:  <p>$1</p>\n-->
     <description>
         <p>
-            S3Drive is an easy-to-use client that converts any S3 server into your personal encrypted file storage. Your files are encrypted before they leave your device, so no one beside you can access them. Not even us.
+            S3Drive is an easy-to-use software client that converts vast range of protocols (S3, WebDav, FTP etc.) and cloud providers into your personal encrypted file storage with comprehensive syncing and backup options.
         </p>
         <p>
-            Features: Rclone compatible E2E encryption, Filename/filepath encryption, Photo &amp;amp; video backup, File versioning, Secure sharing via encrypted link, Desktop two-way sync, Offline files, ZIP download, Multiple accounts support, Search recursively, Manage files &amp;amp; directories (open, preview, download, copy, delete, rename, folder upload etc.), Preview different file formats, Support streaming of encrypted videos, Edit text files, Object Lock support, Mount S3Drive as disk (desktop), List and grid view, Light and dark themes,
+            There are dozens of providers where you can get a free tier account. You can then decide to pay only for additionally used storage or you can fully control your storage by self-hosting S3 or any other back-end.
         </p>
         <p>
-            Available on: Android, iOS, macOS, Windows, Linux, Web Desktop clients: https://s3drive.app/desktop Browser web client: https://web.s3drive.app
+            You can start with the simplest option and make adjustments whenever you're ready. Your files are encrypted before they leave your device, so no one beside you can access them. Not even us.
         </p>
         <p>
-            Support for AWS S3, Backblaze, Wasabi, Cloudflare, MinIO and any other S3 compatible provider. Sign-up for a free account, no credit card required.
+            Features: Rclone compatible E2E encryption, Drive mount, Sync modes (copy, move, sync, two-way), Content and filename encryption, Secure sharing via encrypted link, Multiple accounts support, Manage files &amp; directories (open, preview, download, copy, delete, rename, folder upload etc.), Preview different file formats (pdf, markdown, txt, audio, video), Simple text editor, Search within directories, Object Lock support, File versioning (delete &amp; restore), Light and dark themes
         </p>
         <p>
-            Our roadmap: https://s3drive.canny.io Order by (name, size, modified), Cross-client online sync, Listing cache, ... and many many more, vote in our roadmap and stay tuned !
+            Supported protocols: S3, WebDAV, SFTP, SMB, FTP, HTTP
         </p>
         <p>
-            We would love to hear from you ! Missing some features? App not working as intended? Please visit our Support channel: https://s3drive.app/support
+            Personal storage: Google Drive, Google Photos, Dropbox, Box, Microsoft OneDrive, pCloud, Proton Drive, Koofr
+        </p>
+        <p>
+            S3 clouds: AWS S3, Backblaze B2, Synology C2, Cloudflare R2, Google Cloud Storage, Wasabi, Linode, IDrive e2, Storj, Scaleway, DigitalOcean Spaces<br/>
+            Self-hosted: MinIO, SeaweedFS, GarageFS, Openstack Swift S3, Ceph, Zenko CloudServer<br/>
+            Full list: https://docs.s3drive.app/setup/providers<br/>
+        </p>
+        <p>
+            Available on: Android, iOS, macOS, Windows, Linux, Web. Browser web client: https://web.s3drive.app
+        </p>
+        <p>
+            Our roadmap: https://s3drive.app/roadmap
+        </p>
+        <p>
+            If you like what we're doing and would like to support us, please consider upgrading your plan and leave us a review if you haven't already. More information: https://docs.s3drive.app/contributing
         </p>
     </description>
     <launchable type="desktop-id">io.kapsa.drive.desktop</launchable>
