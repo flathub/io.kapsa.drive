@@ -51,6 +51,12 @@
         <p>
             If you like what we're doing and would like to support us, please consider upgrading your plan and leave us a review if you haven't already. More information: https://docs.s3drive.app/contributing
         </p>
+        <p>
+            Other providers: 1Fichier, Akamai Netstorage, Citrix ShareFile, Digi Storage, Enterprise File Fabric, HiDrive, Internet Archive, Jottacloud, Linkbox, Mail.ru Cloud, Mega, Rackspace Cloudfiles, Memset Memstore, OpenDrive, Oracle Object Storage, PikPak, premiumize.me, put.io, QingStor, Quatrix by Maytech, Sia, Storj, SugarSync, Uptobox, Yandex Disk, Zoho WorkDrive
+        </p>
+        <p>
+            Other providers (S3): AWS Snowball Edge, Dreamhost, Huawei OBS, IBM COS (S3), Storadera, Xaweho.de, Petabox, IONOS Cloud, Qiniu Cloud Object Storage (Kodo), RackCorp, Seagate Lyve Cloud, Alibaba OSS, China Mobile Ecloud Elastic Object Storage (EOS), Leviia Cloud Object Storage, Liara, ArvanCloud, Tencent COS, Netease NOS
+        </p>
     </description>
     <launchable type="desktop-id">io.kapsa.drive.desktop</launchable>
     <screenshots>
