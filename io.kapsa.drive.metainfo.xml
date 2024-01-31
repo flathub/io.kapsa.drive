@@ -2,7 +2,7 @@
 <component type="desktop-application">
     <id>io.kapsa.drive</id>
     <name>S3Drive</name>
-    <summary>Zero Knowledge E2E encrypted storage compatible with any S3 provider</summary>
+    <summary>Convert S3, SFTP, WebDAV or Rclone back-end into your encrypted storage</summary>
     <developer_name>S3Drive</developer_name>
     <url type="homepage">https://s3drive.app</url>
     <url type="faq">https://s3drive.app/faq</url>
