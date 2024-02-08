@@ -80,8 +80,8 @@
                     "mirror-urls": [
                         "https://github.com/haasn/libplacebo.git"
                     ],
-                    "tag": "v6.338.1",
-                    "commit": "2805a0d01c029084ab36bf5d0e3c8742012a0b27",
+                    "tag": "v6.338.2",
+                    "commit": "64c1954570f1cd57f8570a57e51fb0249b57bb90",
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^v([\\d.]+)$"
@@ -357,9 +357,9 @@
                     "only-arches": [
                         "x86_64"
                     ],
-                    "url": "https://github.com/s3drive/deb-app/releases/download/1.7.7%2B1/s3drive_amd64.deb",
-                    "sha256": "70c4f37b4f04275a35536fe0c31bdcb2c54da67082f5baa758deed4b11db702e",
-                    "size": 47908482,
+                    "url": "https://github.com/s3drive/deb-app/releases/download/1.7.8/s3drive_amd64.deb",
+                    "sha256": "2b2a2b9bb05dddba1cf3a7164e2af4f688efb76c4b104aafd97b7f2abe08e929",
+                    "size": 47933706,
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 371008,
@@ -381,8 +381,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/libfuse/libfuse/releases/download/fuse-3.14.1/fuse-3.14.1.tar.xz",
-                    "sha256": "126919d72b46b3e0eb58a9c6933a2a50c36f2ea69f61fe9e78bdba9f463ffa20",
+                    "url": "https://github.com/libfuse/libfuse/releases/download/fuse-3.16.2/fuse-3.16.2.tar.gz",
+                    "sha256": "f797055d9296b275e981f5f62d4e32e089614fc253d1ef2985851025b8a0ce87",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 861,
