@@ -38,18 +38,15 @@
             Personal storage: Google Drive, Google Photos, Dropbox, Box, Microsoft OneDrive, pCloud, Proton Drive, Koofr
         </p>
         <p>
-            S3 clouds: AWS S3, Backblaze B2, Synology C2, Cloudflare R2, Google Cloud Storage, Wasabi, Linode, IDrive e2, Storj, Scaleway, DigitalOcean Spaces<br/>
-            Self-hosted: MinIO, SeaweedFS, GarageFS, Openstack Swift S3, Ceph, Zenko CloudServer<br/>
-            Full list: https://docs.s3drive.app/setup/providers<br/>
+            S3 clouds: AWS S3, Backblaze B2, Synology C2, Cloudflare R2, Google Cloud Storage, Wasabi, Linode, IDrive e2, Storj, Scaleway, DigitalOcean Spaces&#xD;
+            Self-hosted: MinIO, SeaweedFS, GarageFS, Openstack Swift S3, Ceph, Zenko CloudServer&#xD;
+            Visit our Docs for full list of supported providers.&#xD;
         </p>
         <p>
-            Available on: Android, iOS, macOS, Windows, Linux, Web. Browser web client: https://web.s3drive.app
+            Available on: Android, iOS, macOS, Windows, Linux, Web
         </p>
         <p>
-            Our roadmap: https://s3drive.app/roadmap
-        </p>
-        <p>
-            If you like what we're doing and would like to support us, please consider upgrading your plan and leave us a review if you haven't already. More information: https://docs.s3drive.app/contributing
+            If you like what we're doing and would like to support us, please consider upgrading your plan and leave us a review if you haven't already.
         </p>
         <p>
             Other providers: 1Fichier, Akamai Netstorage, Citrix ShareFile, Digi Storage, Enterprise File Fabric, HiDrive, Internet Archive, Jottacloud, Linkbox, Mail.ru Cloud, Mega, Rackspace Cloudfiles, Memset Memstore, OpenDrive, Oracle Object Storage, PikPak, premiumize.me, put.io, QingStor, Quatrix by Maytech, Sia, Storj, SugarSync, Uptobox, Yandex Disk, Zoho WorkDrive
