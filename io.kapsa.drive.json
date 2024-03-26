@@ -31,7 +31,6 @@
         "--talk-name=org.gnome.keyring",
         "--talk-name=org.kde.kwalletd5",
         "--talk-name=org.kde.StatusNotifierWatcher",
-        "--own-name=org.kde.*",
         "--talk-name=org.gtk.vfs.*",
         "--talk-name=org.ayatana",
         "--talk-name=com.canonical.AppMenu.Registrar",
