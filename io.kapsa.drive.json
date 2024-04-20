@@ -123,11 +123,7 @@
                             "url": "https://github.com/KhronosGroup/SPIRV-Tools.git",
                             "tag": "v2023.2",
                             "commit": "44d72a9b36702f093dd20815561a56778b2d181e",
-                            "dest": "third_party/spirv-tools",
-                            "x-checker-data": {
-                                "type": "git",
-                                "tag-pattern": "^v(\\d{4}\\.\\d{1})$"
-                            }
+                            "dest": "third_party/spirv-tools"
                         },
                         {
                             "type": "git",
