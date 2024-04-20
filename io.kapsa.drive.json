@@ -121,8 +121,8 @@
                         {
                             "type": "git",
                             "url": "https://github.com/KhronosGroup/SPIRV-Tools.git",
-                            "tag": "v2023.2",
-                            "commit": "44d72a9b36702f093dd20815561a56778b2d181e",
+                            "tag": "v2024.1",
+                            "commit": "04896c462d9f3f504c99a4698605b6524af813c1",
                             "dest": "third_party/spirv-tools",
                             "x-checker-data": {
                                 "type": "git",
@@ -169,8 +169,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/mpv-player/mpv/archive/refs/tags/v0.37.0.tar.gz",
-                    "sha256": "1d2d4adbaf048a2fa6ee134575032c4b2dad9a7efafd5b3e69b88db935afaddf",
+                    "url": "https://github.com/mpv-player/mpv/archive/refs/tags/v0.38.0.tar.gz",
+                    "sha256": "86d9ef40b6058732f67b46d0bbda24a074fae860b3eaae05bab3145041303066",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 5348,
@@ -357,9 +357,9 @@
                     "only-arches": [
                         "x86_64"
                     ],
-                    "url": "https://github.com/s3drive/deb-app/releases/download/1.8.3%2B1/s3drive_amd64.deb",
-                    "sha256": "4502e055b61a1e89d5d8b714b018efe901691de7def437c85ce1fee9320ea4bc",
-                    "size": 48522630,
+                    "url": "https://github.com/s3drive/deb-app/releases/download/1.8.5/s3drive_amd64.deb",
+                    "sha256": "85171d7f5a4fe7e99a1a0f5030aed4060b541708b95adb1c18fa1f053f80f4a8",
+                    "size": 48477430,
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 371008,
