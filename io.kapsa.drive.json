@@ -174,6 +174,9 @@
                         "url-template": "https://github.com/mpv-player/mpv/archive/refs/tags/v$version.tar.gz"
                     }
                 }
+            ],
+            "post-install": [
+                "ln -s /app/lib/libmpv.so /app/lib/libmpv.so.1"
             ]
         },
         "shared-modules/intltool/intltool-0.51.json",
@@ -332,7 +335,7 @@
                     "type": "script",
                     "dest-filename": "s3drive.sh",
                     "commands": [
-                        "exec env TMPDIR=$XDG_CACHE_HOME /app/extra/local/lib/s3drive/kapsa -s $EXTRA_ARGS \"$@\""
+                        "exec env TMPDIR=$XDG_CACHE_HOME LD_LIBRARY_PATH=/app/lib /app/extra/local/lib/s3drive/kapsa -s $EXTRA_ARGS \"$@\""
                     ]
                 },
                 {
