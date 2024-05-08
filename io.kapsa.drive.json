@@ -24,6 +24,7 @@
         "--filesystem=xdg-download",
         "--filesystem=host",
         "--filesystem=xdg-run/gvfs",
+        "--filesystem=xdg-run/gvfsd",
         "--filesystem=xdg-run/pipewire-0:ro",
         "--talk-name=org.freedesktop.Flatpak",
         "--talk-name=org.freedesktop.FileManager1",
