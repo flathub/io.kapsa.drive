@@ -87,6 +87,10 @@
     </screenshots>
     <content_rating type="oars-1.1"/>
     <releases>
+        <release version="1.9.7" date="2024-07-18"/>
+        <release version="1.9.6" date="2024-07-13"/>
+        <release version="1.9.5" date="2024-07-09"/>
+        <release version="1.9.4" date="2024-07-05"/>
         <release version="1.9.3" date="2024-07-02"/>
         <release version="1.9.2" date="2024-06-26"/>
         <release version="1.9.1" date="2024-06-10"/>
