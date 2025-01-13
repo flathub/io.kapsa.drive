@@ -22,6 +22,7 @@
     "--filesystem=xdg-pictures:ro",
     "--filesystem=xdg-videos:ro",
     "--filesystem=xdg-download",
+    "--filesystem=xdg-documents",
     "--filesystem=host",
     "--filesystem=xdg-run/gvfs",
     "--filesystem=xdg-run/gvfsd",
@@ -184,80 +185,7 @@
       ]
     },
     "shared-modules/intltool/intltool-0.51.json",
-    {
-      "name": "libdbusmenu-gtk3",
-      "buildsystem": "autotools",
-      "build-options": {
-        "cflags": "-Wno-error",
-        "env": {
-          "HAVE_VALGRIND_FALSE": "#",
-          "HAVE_VALGRIND_TRUE": ""
-        }
-      },
-      "config-opts": [
-        "--with-gtk=3",
-        "--disable-dumper",
-        "--disable-static",
-        "--disable-tests",
-        "--disable-gtk-doc",
-        "--enable-introspection=no",
-        "--disable-vala"
-      ],
-      "sources": [
-        {
-          "type": "archive",
-          "url": "https://launchpad.net/libdbusmenu/16.04/16.04.0/+download/libdbusmenu-16.04.0.tar.gz",
-          "sha256": "b9cc4a2acd74509435892823607d966d424bd9ad5d0b00938f27240a1bfa878a"
-        }
-      ],
-      "cleanup": [
-        "/include",
-        "/libexec",
-        "/lib/pkgconfig",
-        "/lib/*.la",
-        "/share/doc",
-        "/share/libdbusmenu",
-        "/share/gtk-doc",
-        "/share/gir-1.0"
-      ]
-    },
-    {
-      "name": "ayatana-ido",
-      "buildsystem": "cmake-ninja",
-      "sources": [
-        {
-          "type": "git",
-          "url": "https://github.com/AyatanaIndicators/ayatana-ido.git",
-          "tag": "0.9.1"
-        }
-      ]
-    },
-    {
-      "name": "libayatana-indicator",
-      "buildsystem": "cmake-ninja",
-      "sources": [
-        {
-          "type": "git",
-          "url": "https://github.com/AyatanaIndicators/libayatana-indicator.git",
-          "tag": "0.9.1"
-        }
-      ]
-    },
-    {
-      "name": "libayatana-appindicator",
-      "buildsystem": "cmake-ninja",
-      "config-opts": [
-        "-DENABLE_BINDINGS_MONO=NO",
-        "-DENABLE_BINDINGS_VALA=NO"
-      ],
-      "sources": [
-        {
-          "type": "git",
-          "url": "https://github.com/AyatanaIndicators/libayatana-appindicator.git",
-          "tag": "0.5.90"
-        }
-      ]
-    },
+    "libayatana-appindicator3-0.1.yml",
     {
       "name": "libjson",
       "buildsystem": "meson",
@@ -303,6 +231,17 @@
       ],
       "post-install": [
         "install -Dm644 LICENSE ${FLATPAK_DEST}/share/licenses/libsodium/LICENSE"
+      ]
+    },
+    {
+      "name": "zenity",
+      "buildsystem": "meson",
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://download.gnome.org/sources/zenity/3.41/zenity-3.41.0.tar.xz",
+          "sha256": "19b676c3510e22badfcc3204062d432ba537402f5e0ae26128c0d90c954037e1"
+        }
       ]
     },
     {
