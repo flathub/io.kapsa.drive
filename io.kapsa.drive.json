@@ -299,9 +299,9 @@
           "only-arches": [
             "x86_64"
           ],
-          "url": "https://github.com/s3drive/deb-app/releases/download/1.12.0/s3drive_amd64.deb",
-          "sha256": "cd0a1bcdcf682ba122ff39dd31c4e85a671a2987cb20b39aa657f66c4b58fe75",
-          "size": 54461616,
+          "url": "https://github.com/s3drive/deb-app/releases/download/1.12.1/s3drive_amd64.deb",
+          "sha256": "ac6dba0b4388e69817e115d3fbb77209f805674dbf63ff4babc1b168e4451fb4",
+          "size": 54366986,
           "x-checker-data": {
             "type": "anitya",
             "project-id": 371008,
