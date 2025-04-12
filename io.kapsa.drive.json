@@ -278,7 +278,7 @@
           "type": "script",
           "dest-filename": "s3drive.sh",
           "commands": [
-            "exec env TMPDIR=$XDG_CACHE_HOME LD_LIBRARY_PATH=/app/lib /app/extra/local/lib/s3drive/kapsa -s $EXTRA_ARGS \"$@\""
+            "exec env TMPDIR=$XDG_CACHE_HOME LD_LIBRARY_PATH=/app/lib /app/extra/local/lib/s3drive/kapsa $EXTRA_ARGS \"$@\""
           ]
         },
         {
