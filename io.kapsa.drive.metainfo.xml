@@ -87,6 +87,8 @@
     </screenshots>
     <content_rating type="oars-1.1"/>
     <releases>
+        <release version="1.12.8" date="2025-05-29"/>
+        <release version="1.12.7" date="2025-05-23"/>
         <release version="1.12.6" date="2025-05-20"/>
         <release version="1.12.5" date="2025-05-15"/>
         <release version="1.12.4" date="2025-04-30"/>
