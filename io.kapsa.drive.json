@@ -82,9 +82,6 @@
         {
           "type": "git",
           "url": "https://code.videolan.org/videolan/libplacebo.git",
-          "mirror-urls": [
-            "https://github.com/haasn/libplacebo.git"
-          ],
           "tag": "v7.349.0",
           "commit": "1fd3c7bde7b943fe8985c893310b5269a09b46c5",
           "x-checker-data": {
@@ -299,9 +296,9 @@
           "only-arches": [
             "x86_64"
           ],
-          "url": "https://github.com/s3drive/deb-app/releases/download/1.12.9/s3drive_amd64.deb",
-          "sha256": "a5abf814859deeeb7bb49be8228baab192fe9d6abb8d944b15b72e27cb4d2a94",
-          "size": 54970472,
+          "url": "https://github.com/s3drive/deb-app/releases/download/1.13.0/s3drive_amd64.deb",
+          "sha256": "48bfb2c4d7d60056d3c2c88d846a82f1c865e20c42ff47cd5e7a57b412cfe9d7",
+          "size": 55341096,
           "x-checker-data": {
             "type": "anitya",
             "project-id": 371008,
