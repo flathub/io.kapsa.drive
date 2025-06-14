@@ -82,9 +82,6 @@
         {
           "type": "git",
           "url": "https://code.videolan.org/videolan/libplacebo.git",
-          "mirror-urls": [
-            "https://github.com/haasn/libplacebo.git"
-          ],
           "tag": "v7.349.0",
           "commit": "1fd3c7bde7b943fe8985c893310b5269a09b46c5",
           "x-checker-data": {
