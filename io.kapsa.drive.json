@@ -1,350 +1,350 @@
 {
-  "app-id": "io.kapsa.drive",
-  "runtime": "org.freedesktop.Platform",
-  "runtime-version": "23.08",
-  "sdk": "org.freedesktop.Sdk",
-  "sdk-extensions": [
-    "org.freedesktop.Sdk.Extension.vala"
-  ],
-  "command": "s3drive",
-  "separate-locales": false,
-  "build-options": {
-    "append-path": "/usr/lib/sdk/vala/bin",
-    "prepend-ld-library-path": "/usr/lib/sdk/vala/lib"
-  },
-  "finish-args": [
-    "--share=ipc",
-    "--socket=fallback-x11",
-    "--socket=wayland",
-    "--device=dri",
-    "--socket=pulseaudio",
-    "--share=network",
-    "--filesystem=xdg-pictures:ro",
-    "--filesystem=xdg-videos:ro",
-    "--filesystem=xdg-download",
-    "--filesystem=xdg-documents",
-    "--filesystem=host",
-    "--filesystem=xdg-run/gvfs",
-    "--filesystem=xdg-run/gvfsd",
-    "--filesystem=xdg-run/pipewire-0:ro",
-    "--talk-name=org.freedesktop.Flatpak",
-    "--talk-name=org.freedesktop.FileManager1",
-    "--talk-name=org.freedesktop.Notifications",
-    "--talk-name=org.freedesktop.secrets",
-    "--talk-name=org.gnome.keyring",
-    "--talk-name=org.kde.kwalletd5",
-    "--talk-name=org.gtk.vfs.*",
-    "--talk-name=org.ayatana",
-    "--talk-name=org.kde.StatusNotifierWatcher",
-    "--system-talk-name=org.freedesktop.NetworkManager"
-  ],
-  "modules": [
-    {
-      "name": "libass",
-      "sources": [
+    "app-id": "io.kapsa.drive",
+    "runtime": "org.freedesktop.Platform",
+    "runtime-version": "23.08",
+    "sdk": "org.freedesktop.Sdk",
+    "sdk-extensions": [
+        "org.freedesktop.Sdk.Extension.vala"
+    ],
+    "command": "s3drive",
+    "separate-locales": false,
+    "build-options": {
+        "append-path": "/usr/lib/sdk/vala/bin",
+        "prepend-ld-library-path": "/usr/lib/sdk/vala/lib"
+    },
+    "finish-args": [
+        "--share=ipc",
+        "--socket=fallback-x11",
+        "--socket=wayland",
+        "--device=dri",
+        "--socket=pulseaudio",
+        "--share=network",
+        "--filesystem=xdg-pictures:ro",
+        "--filesystem=xdg-videos:ro",
+        "--filesystem=xdg-download",
+        "--filesystem=xdg-documents",
+        "--filesystem=host",
+        "--filesystem=xdg-run/gvfs",
+        "--filesystem=xdg-run/gvfsd",
+        "--filesystem=xdg-run/pipewire-0:ro",
+        "--talk-name=org.freedesktop.Flatpak",
+        "--talk-name=org.freedesktop.FileManager1",
+        "--talk-name=org.freedesktop.Notifications",
+        "--talk-name=org.freedesktop.secrets",
+        "--talk-name=org.gnome.keyring",
+        "--talk-name=org.kde.kwalletd5",
+        "--talk-name=org.gtk.vfs.*",
+        "--talk-name=org.ayatana",
+        "--talk-name=org.kde.StatusNotifierWatcher",
+        "--system-talk-name=org.freedesktop.NetworkManager"
+    ],
+    "modules": [
         {
-          "type": "archive",
-          "url": "https://github.com/libass/libass/releases/download/0.17.2/libass-0.17.2.tar.xz",
-          "sha256": "e8261b51d66ba933fe99248c6fdd8767ed96c5a7e5363c83992c735a2c2fbf74",
-          "x-checker-data": {
-            "type": "anitya",
-            "project-id": 1560,
-            "stable-only": true,
-            "url-template": "https://github.com/libass/libass/releases/download/$version/libass-$version.tar.xz"
-          }
+            "name": "libass",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/libass/libass/releases/download/0.17.4/libass-0.17.4.tar.xz",
+                    "sha256": "78f1179b838d025e9c26e8fef33f8092f65611444ffa1bfc0cfac6a33511a05a",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 1560,
+                        "stable-only": true,
+                        "url-template": "https://github.com/libass/libass/releases/download/$version/libass-$version.tar.xz"
+                    }
+                },
+                {
+                    "type": "script",
+                    "commands": [
+                        "autoreconf -fiv"
+                    ],
+                    "dest-filename": "autogen.sh"
+                }
+            ],
+            "cleanup": [
+                "/include",
+                "/lib/pkgconfig",
+                "/share"
+            ]
         },
         {
-          "type": "script",
-          "commands": [
-            "autoreconf -fiv"
-          ],
-          "dest-filename": "autogen.sh"
-        }
-      ],
-      "cleanup": [
-        "/include",
-        "/lib/pkgconfig",
-        "/share"
-      ]
-    },
-    {
-      "name": "libplacebo",
-      "buildsystem": "meson",
-      "config-opts": [
-        "-Dvulkan=enabled",
-        "-Dshaderc=enabled"
-      ],
-      "cleanup": [
-        "/include",
-        "/lib/pkgconfig"
-      ],
-      "sources": [
-        {
-          "type": "git",
-          "url": "https://code.videolan.org/videolan/libplacebo.git",
-          "tag": "v7.349.0",
-          "commit": "1fd3c7bde7b943fe8985c893310b5269a09b46c5",
-          "x-checker-data": {
-            "type": "git",
-            "tag-pattern": "^v([\\d.]+)$"
-          }
-        }
-      ],
-      "modules": [
-        {
-          "name": "shaderc",
-          "buildsystem": "cmake-ninja",
-          "builddir": true,
-          "config-opts": [
-            "-DSHADERC_SKIP_COPYRIGHT_CHECK=ON",
-            "-DSHADERC_SKIP_EXAMPLES=ON",
-            "-DSHADERC_SKIP_TESTS=ON",
-            "-DSPIRV_SKIP_EXECUTABLES=ON",
-            "-DENABLE_GLSLANG_BINARIES=OFF"
-          ],
-          "cleanup": [
-            "/bin",
-            "/include",
-            "/lib/cmake",
-            "/lib/pkgconfig",
-            "/lib/*.a"
-          ],
-          "sources": [
-            {
-              "type": "git",
-              "url": "https://github.com/google/shaderc.git",
-              "tag": "v2024.1",
-              "commit": "47a9387ef5b3600d30d84c71ec77a59dc7db46fa",
-              "x-checker-data": {
-                "type": "git",
-                "tag-pattern": "^v(\\d{4}\\.\\d{1,2})$"
-              }
-            },
-            {
-              "type": "git",
-              "url": "https://github.com/KhronosGroup/SPIRV-Tools.git",
-              "tag": "v2023.2",
-              "commit": "44d72a9b36702f093dd20815561a56778b2d181e",
-              "dest": "third_party/spirv-tools"
-            },
-            {
-              "type": "git",
-              "url": "https://github.com/KhronosGroup/SPIRV-Headers.git",
-              "tag": "sdk-1.3.250.1",
-              "commit": "268a061764ee69f09a477a695bf6a11ffe311b8d",
-              "dest": "third_party/spirv-headers"
-            },
-            {
-              "type": "git",
-              "url": "https://github.com/KhronosGroup/glslang.git",
-              "tag": "14.0.0",
-              "commit": "a91631b260cba3f22858d6c6827511e636c2458a",
-              "dest": "third_party/glslang"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "libmpv",
-      "cleanup": [
-        "/share/metainfo",
-        "/share/bash-completion",
-        "/share/zsh",
-        "/share/doc",
-        "/share/icons",
-        "/share/applications"
-      ],
-      "buildsystem": "meson",
-      "config-opts": [
-        "-Dlibmpv=true",
-        "-Dlua=disabled",
-        "-Ddebug=false",
-        "-Dbuild-date=false",
-        "-Dcplayer=false",
-        "-Dmanpage-build=disabled"
-      ],
-      "sources": [
-        {
-          "type": "archive",
-          "url": "https://github.com/mpv-player/mpv/archive/refs/tags/v0.38.0.tar.gz",
-          "sha256": "86d9ef40b6058732f67b46d0bbda24a074fae860b3eaae05bab3145041303066",
-          "x-checker-data": {
-            "type": "anitya",
-            "project-id": 5348,
-            "stable-only": true,
-            "url-template": "https://github.com/mpv-player/mpv/archive/refs/tags/v$version.tar.gz"
-          }
-        }
-      ],
-      "post-install": [
-        "ln -s /app/lib/libmpv.so /app/lib/libmpv.so.1"
-      ]
-    },
-    "shared-modules/intltool/intltool-0.51.json",
-    "libayatana-appindicator3-0.1.yml",
-    {
-      "name": "libjson",
-      "buildsystem": "meson",
-      "sources": [
-        {
-          "type": "archive",
-          "url": "https://github.com/open-source-parsers/jsoncpp/archive/refs/tags/1.9.5.zip",
-          "sha256": "a074e1b38083484e8e07789fd683599d19da8bb960959c83751cd0284bdf2043"
-        }
-      ]
-    },
-    {
-      "name": "libsecret",
-      "buildsystem": "meson",
-      "config-opts": [
-        "-Dmanpage=false",
-        "-Dvapi=false",
-        "-Dgtk_doc=false",
-        "-Dintrospection=false"
-      ],
-      "cleanup": [
-        "/bin",
-        "/include",
-        "/lib/pkgconfig",
-        "/share/man"
-      ],
-      "sources": [
-        {
-          "type": "archive",
-          "url": "https://download.gnome.org/sources/libsecret/0.20/libsecret-0.20.5.tar.xz",
-          "sha256": "3fb3ce340fcd7db54d87c893e69bfc2b1f6e4d4b279065ffe66dac9f0fd12b4d"
-        }
-      ]
-    },
-    {
-      "name": "libsodium",
-      "sources": [
-        {
-          "type": "archive",
-          "url": "https://github.com/jedisct1/libsodium/archive/1.0.18-RELEASE.tar.gz",
-          "sha256": "b7292dd1da67a049c8e78415cd498ec138d194cfdb302e716b08d26b80fecc10"
-        }
-      ],
-      "post-install": [
-        "install -Dm644 LICENSE ${FLATPAK_DEST}/share/licenses/libsodium/LICENSE"
-      ]
-    },
-    {
-      "name": "zenity",
-      "buildsystem": "meson",
-      "sources": [
-        {
-          "type": "archive",
-          "url": "https://download.gnome.org/sources/zenity/3.41/zenity-3.41.0.tar.xz",
-          "sha256": "19b676c3510e22badfcc3204062d432ba537402f5e0ae26128c0d90c954037e1"
-        }
-      ]
-    },
-    {
-      "name": "s3drive",
-      "only-arches": [
-        "x86_64"
-      ],
-      "buildsystem": "simple",
-      "build-commands": [
-        "install apply_extra ${FLATPAK_DEST}/bin",
-        "install s3drive.sh ${FLATPAK_DEST}/bin/s3drive",
-        "install -Dm644 io.kapsa.drive.metainfo.xml ${FLATPAK_DEST}/share/appdata/${FLATPAK_ID}.metainfo.xml",
-        "install -Dm644 s3drive_logo.png ${FLATPAK_DEST}/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.png",
-        "install -Dm644 io.kapsa.drive.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop",
-        "install -Dm755 /usr/bin/ar -t ${FLATPAK_DEST}/bin",
-        "install -Dm755 /usr/lib/$(gcc -print-multiarch)/libbfd-*.so -t ${FLATPAK_DEST}/lib",
-        "cp -a /usr/lib/$(gcc -print-multiarch)/libsframe.so* ${FLATPAK_DEST}/lib"
-      ],
-      "sources": [
-        {
-          "type": "script",
-          "dest-filename": "apply_extra",
-          "commands": [
-            "ar x s3drive_amd64.deb",
-            "rm -f s3drive_amd64.deb",
-            "tar --use-compress-program=unzstd -xvf data.tar.zst",
-            "rm -f control.tar.zst data.tar.zst debian-binary",
-            "mv usr/* .",
-            "chmod -R a-s,go+rX,go-w .",
-            "rmdir usr"
-          ]
+            "name": "libplacebo",
+            "buildsystem": "meson",
+            "config-opts": [
+                "-Dvulkan=enabled",
+                "-Dshaderc=enabled"
+            ],
+            "cleanup": [
+                "/include",
+                "/lib/pkgconfig"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://code.videolan.org/videolan/libplacebo.git",
+                    "tag": "v7.351.0",
+                    "commit": "3188549fba13bbdf3a5a98de2a38c2e71f04e21e",
+                    "x-checker-data": {
+                        "type": "git",
+                        "tag-pattern": "^v([\\d.]+)$"
+                    }
+                }
+            ],
+            "modules": [
+                {
+                    "name": "shaderc",
+                    "buildsystem": "cmake-ninja",
+                    "builddir": true,
+                    "config-opts": [
+                        "-DSHADERC_SKIP_COPYRIGHT_CHECK=ON",
+                        "-DSHADERC_SKIP_EXAMPLES=ON",
+                        "-DSHADERC_SKIP_TESTS=ON",
+                        "-DSPIRV_SKIP_EXECUTABLES=ON",
+                        "-DENABLE_GLSLANG_BINARIES=OFF"
+                    ],
+                    "cleanup": [
+                        "/bin",
+                        "/include",
+                        "/lib/cmake",
+                        "/lib/pkgconfig",
+                        "/lib/*.a"
+                    ],
+                    "sources": [
+                        {
+                            "type": "git",
+                            "url": "https://github.com/google/shaderc.git",
+                            "tag": "v2025.3",
+                            "commit": "8c2e602ce440b7739c95ff3d69cecb1adf6becda",
+                            "x-checker-data": {
+                                "type": "git",
+                                "tag-pattern": "^v(\\d{4}\\.\\d{1,2})$"
+                            }
+                        },
+                        {
+                            "type": "git",
+                            "url": "https://github.com/KhronosGroup/SPIRV-Tools.git",
+                            "tag": "v2023.2",
+                            "commit": "44d72a9b36702f093dd20815561a56778b2d181e",
+                            "dest": "third_party/spirv-tools"
+                        },
+                        {
+                            "type": "git",
+                            "url": "https://github.com/KhronosGroup/SPIRV-Headers.git",
+                            "tag": "sdk-1.3.250.1",
+                            "commit": "268a061764ee69f09a477a695bf6a11ffe311b8d",
+                            "dest": "third_party/spirv-headers"
+                        },
+                        {
+                            "type": "git",
+                            "url": "https://github.com/KhronosGroup/glslang.git",
+                            "tag": "14.0.0",
+                            "commit": "a91631b260cba3f22858d6c6827511e636c2458a",
+                            "dest": "third_party/glslang"
+                        }
+                    ]
+                }
+            ]
         },
         {
-          "type": "script",
-          "dest-filename": "s3drive.sh",
-          "commands": [
-            "exec env TMPDIR=$XDG_CACHE_HOME LD_LIBRARY_PATH=/app/lib /app/extra/local/lib/s3drive/kapsa $EXTRA_ARGS \"$@\""
-          ]
+            "name": "libmpv",
+            "cleanup": [
+                "/share/metainfo",
+                "/share/bash-completion",
+                "/share/zsh",
+                "/share/doc",
+                "/share/icons",
+                "/share/applications"
+            ],
+            "buildsystem": "meson",
+            "config-opts": [
+                "-Dlibmpv=true",
+                "-Dlua=disabled",
+                "-Ddebug=false",
+                "-Dbuild-date=false",
+                "-Dcplayer=false",
+                "-Dmanpage-build=disabled"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/mpv-player/mpv/archive/refs/tags/v0.40.0.tar.gz",
+                    "sha256": "10a0f4654f62140a6dd4d380dcf0bbdbdcf6e697556863dc499c296182f081a3",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 5348,
+                        "stable-only": true,
+                        "url-template": "https://github.com/mpv-player/mpv/archive/refs/tags/v$version.tar.gz"
+                    }
+                }
+            ],
+            "post-install": [
+                "ln -s /app/lib/libmpv.so /app/lib/libmpv.so.1"
+            ]
+        },
+        "shared-modules/intltool/intltool-0.51.json",
+        "libayatana-appindicator3-0.1.yml",
+        {
+            "name": "libjson",
+            "buildsystem": "meson",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/open-source-parsers/jsoncpp/archive/refs/tags/1.9.5.zip",
+                    "sha256": "a074e1b38083484e8e07789fd683599d19da8bb960959c83751cd0284bdf2043"
+                }
+            ]
         },
         {
-          "type": "file",
-          "path": "io.kapsa.drive.metainfo.xml"
+            "name": "libsecret",
+            "buildsystem": "meson",
+            "config-opts": [
+                "-Dmanpage=false",
+                "-Dvapi=false",
+                "-Dgtk_doc=false",
+                "-Dintrospection=false"
+            ],
+            "cleanup": [
+                "/bin",
+                "/include",
+                "/lib/pkgconfig",
+                "/share/man"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.gnome.org/sources/libsecret/0.20/libsecret-0.20.5.tar.xz",
+                    "sha256": "3fb3ce340fcd7db54d87c893e69bfc2b1f6e4d4b279065ffe66dac9f0fd12b4d"
+                }
+            ]
         },
         {
-          "type": "file",
-          "path": "io.kapsa.drive.desktop"
+            "name": "libsodium",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/jedisct1/libsodium/archive/1.0.18-RELEASE.tar.gz",
+                    "sha256": "b7292dd1da67a049c8e78415cd498ec138d194cfdb302e716b08d26b80fecc10"
+                }
+            ],
+            "post-install": [
+                "install -Dm644 LICENSE ${FLATPAK_DEST}/share/licenses/libsodium/LICENSE"
+            ]
         },
         {
-          "type": "file",
-          "path": "s3drive_logo.png"
+            "name": "zenity",
+            "buildsystem": "meson",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.gnome.org/sources/zenity/3.41/zenity-3.41.0.tar.xz",
+                    "sha256": "19b676c3510e22badfcc3204062d432ba537402f5e0ae26128c0d90c954037e1"
+                }
+            ]
         },
         {
-          "type": "extra-data",
-          "filename": "s3drive_amd64.deb",
-          "only-arches": [
-            "x86_64"
-          ],
-          "url": "https://github.com/s3drive/deb-app/releases/download/1.14.0/s3drive_amd64.deb",
-          "sha256": "cb38be025ba7a203a49c0084a43ea5a0496f0b9e47c9606073ea6d5f0daf9831",
-          "size": 65631390,
-          "x-checker-data": {
-            "type": "anitya",
-            "project-id": 371008,
-            "url-template": "https://github.com/s3drive/deb-app/releases/download/$version/s3drive_amd64.deb"
-          }
+            "name": "s3drive",
+            "only-arches": [
+                "x86_64"
+            ],
+            "buildsystem": "simple",
+            "build-commands": [
+                "install apply_extra ${FLATPAK_DEST}/bin",
+                "install s3drive.sh ${FLATPAK_DEST}/bin/s3drive",
+                "install -Dm644 io.kapsa.drive.metainfo.xml ${FLATPAK_DEST}/share/appdata/${FLATPAK_ID}.metainfo.xml",
+                "install -Dm644 s3drive_logo.png ${FLATPAK_DEST}/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.png",
+                "install -Dm644 io.kapsa.drive.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop",
+                "install -Dm755 /usr/bin/ar -t ${FLATPAK_DEST}/bin",
+                "install -Dm755 /usr/lib/$(gcc -print-multiarch)/libbfd-*.so -t ${FLATPAK_DEST}/lib",
+                "cp -a /usr/lib/$(gcc -print-multiarch)/libsframe.so* ${FLATPAK_DEST}/lib"
+            ],
+            "sources": [
+                {
+                    "type": "script",
+                    "dest-filename": "apply_extra",
+                    "commands": [
+                        "ar x s3drive_amd64.deb",
+                        "rm -f s3drive_amd64.deb",
+                        "tar --use-compress-program=unzstd -xvf data.tar.zst",
+                        "rm -f control.tar.zst data.tar.zst debian-binary",
+                        "mv usr/* .",
+                        "chmod -R a-s,go+rX,go-w .",
+                        "rmdir usr"
+                    ]
+                },
+                {
+                    "type": "script",
+                    "dest-filename": "s3drive.sh",
+                    "commands": [
+                        "exec env TMPDIR=$XDG_CACHE_HOME LD_LIBRARY_PATH=/app/lib /app/extra/local/lib/s3drive/kapsa $EXTRA_ARGS \"$@\""
+                    ]
+                },
+                {
+                    "type": "file",
+                    "path": "io.kapsa.drive.metainfo.xml"
+                },
+                {
+                    "type": "file",
+                    "path": "io.kapsa.drive.desktop"
+                },
+                {
+                    "type": "file",
+                    "path": "s3drive_logo.png"
+                },
+                {
+                    "type": "extra-data",
+                    "filename": "s3drive_amd64.deb",
+                    "only-arches": [
+                        "x86_64"
+                    ],
+                    "url": "https://github.com/s3drive/deb-app/releases/download/1.14.1/s3drive_amd64.deb",
+                    "sha256": "3d9c52592d3eb1ec25137f65180339b362c13fd761cd94423028e78d20e4159a",
+                    "size": 65598890,
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 371008,
+                        "url-template": "https://github.com/s3drive/deb-app/releases/download/$version/s3drive_amd64.deb"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "libfuse",
+            "buildsystem": "meson",
+            "config-opts": [
+                "-Dexamples=false",
+                "-Dinitscriptdir=",
+                "-Duseroot=false",
+                "-Dtests=false",
+                "-Dudevrulesdir=/tmp/"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/libfuse/libfuse/releases/download/fuse-3.17.2/fuse-3.17.2.tar.gz",
+                    "sha256": "3d932431ad94e86179e5265cddde1d67aa3bb2fb09a5bd35c641f86f2b5ed06f",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 861,
+                        "url-template": "https://github.com/libfuse/libfuse/releases/download/fuse-$version/fuse-$version.tar.gz",
+                        "versions": {
+                            "<": "4.0"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "host-command-wrapper",
+            "buildsystem": "simple",
+            "build-commands": [
+                "install fusermount-wrapper.sh /app/bin/fusermount3"
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "path": "fusermount-wrapper.sh"
+                }
+            ]
         }
-      ]
-    },
-    {
-      "name": "libfuse",
-      "buildsystem": "meson",
-      "config-opts": [
-        "-Dexamples=false",
-        "-Dinitscriptdir=",
-        "-Duseroot=false",
-        "-Dtests=false",
-        "-Dudevrulesdir=/tmp/"
-      ],
-      "sources": [
-        {
-          "type": "archive",
-          "url": "https://github.com/libfuse/libfuse/releases/download/fuse-3.16.2/fuse-3.16.2.tar.gz",
-          "sha256": "f797055d9296b275e981f5f62d4e32e089614fc253d1ef2985851025b8a0ce87",
-          "x-checker-data": {
-            "type": "anitya",
-            "project-id": 861,
-            "url-template": "https://github.com/libfuse/libfuse/releases/download/fuse-$version/fuse-$version.tar.gz",
-            "versions": {
-              "<": "4.0"
-            }
-          }
-        }
-      ]
-    },
-    {
-      "name": "host-command-wrapper",
-      "buildsystem": "simple",
-      "build-commands": [
-        "install fusermount-wrapper.sh /app/bin/fusermount3"
-      ],
-      "sources": [
-        {
-          "type": "file",
-          "path": "fusermount-wrapper.sh"
-        }
-      ]
-    }
-  ]
+    ]
 }
