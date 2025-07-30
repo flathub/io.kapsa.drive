@@ -38,9 +38,9 @@
             Personal storage: Google Drive, Google Photos, Dropbox, Box, Microsoft OneDrive, pCloud, Proton Drive, Koofr
         </p>
         <p>
-            S3 clouds: AWS S3, Backblaze B2, Synology C2, Cloudflare R2, Google Cloud Storage, Wasabi, Linode, IDrive e2, Storj, Scaleway, DigitalOcean Spaces&#xD;
-            Self-hosted: MinIO, SeaweedFS, GarageFS, Openstack Swift S3, Ceph, Zenko CloudServer&#xD;
-            Visit our Docs for full list of supported providers.&#xD;
+            S3 clouds: AWS S3, Backblaze B2, Synology C2, Cloudflare R2, Google Cloud Storage, Wasabi, Linode, IDrive e2, Storj, Scaleway, DigitalOcean Spaces&#13;
+            Self-hosted: MinIO, SeaweedFS, GarageFS, Openstack Swift S3, Ceph, Zenko CloudServer&#13;
+            Visit our Docs for full list of supported providers.&#13;
         </p>
         <p>
             Available on: Android, iOS, macOS, Windows, Linux, Web
@@ -87,6 +87,9 @@
     </screenshots>
     <content_rating type="oars-1.1"/>
     <releases>
+        <release version="3.17.3" date="2025-07-19">
+            <description></description>
+        </release>
         <release version="1.14.5" date="2025-07-29"/>
         <release version="1.14.4" date="2025-07-21"/>
         <release version="1.14.3" date="2025-07-12"/>
