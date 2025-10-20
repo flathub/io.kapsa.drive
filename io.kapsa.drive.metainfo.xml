@@ -18,6 +18,7 @@
     </supports>
 <!--  Search:   (.+)\n-->
 <!--  Replace:  <p>$1</p>\n-->
+    
     <description>
         <p>
             S3Drive is an easy-to-use software client that converts vast range of protocols (S3, WebDav, FTP etc.) and cloud providers into your personal encrypted file storage with comprehensive syncing and backup options.
