@@ -251,6 +251,7 @@
         "install -Dm644 io.kapsa.drive.metainfo.xml ${FLATPAK_DEST}/share/appdata/${FLATPAK_ID}.metainfo.xml",
         "install -Dm644 icon_22.png ${FLATPAK_DEST}/share/icons/hicolor/22x22/apps/${FLATPAK_ID}.png",
         "install -Dm644 icon_32.png ${FLATPAK_DEST}/share/icons/hicolor/32x32/apps/${FLATPAK_ID}.png",
+        "install -Dm644 icon_32_pending.png ${FLATPAK_DEST}/icon_32_pending.png",
         "install -Dm644 icon_128.png ${FLATPAK_DEST}/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.png",
         "install -Dm644 icon_256.png ${FLATPAK_DEST}/share/icons/hicolor/256x256@2/apps/${FLATPAK_ID}.png",
         "install -Dm644 icon.svg ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg",
