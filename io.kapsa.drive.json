@@ -27,6 +27,7 @@
     "--filesystem=xdg-run/gvfs",
     "--filesystem=xdg-run/gvfsd",
     "--filesystem=xdg-run/pipewire-0:ro",
+    "--filesystem=xdg-run/tray-icon:create",
     "--talk-name=org.freedesktop.Flatpak",
     "--talk-name=org.freedesktop.FileManager1",
     "--talk-name=org.freedesktop.Notifications",
@@ -113,33 +114,30 @@
             {
               "type": "git",
               "url": "https://github.com/google/shaderc.git",
-              "tag": "v2024.1",
-              "commit": "47a9387ef5b3600d30d84c71ec77a59dc7db46fa",
-              "x-checker-data": {
-                "type": "git",
-                "tag-pattern": "^v(\\d{4}\\.\\d{1,2})$"
-              }
+              "tag": "v2025.3",
+              "commit": "8c2e602ce440b7739c95ff3d69cecb1adf6becda"
             },
             {
               "type": "git",
               "url": "https://github.com/KhronosGroup/SPIRV-Tools.git",
-              "tag": "v2023.2",
-              "commit": "44d72a9b36702f093dd20815561a56778b2d181e",
+              "commit": "33e02568181e3312f49a3cf33df470bf96ef293a",
               "dest": "third_party/spirv-tools"
             },
             {
               "type": "git",
               "url": "https://github.com/KhronosGroup/SPIRV-Headers.git",
-              "tag": "sdk-1.3.250.1",
-              "commit": "268a061764ee69f09a477a695bf6a11ffe311b8d",
+              "commit": "2a611a970fdbc41ac2e3e328802aed9985352dca",
               "dest": "third_party/spirv-headers"
             },
             {
               "type": "git",
               "url": "https://github.com/KhronosGroup/glslang.git",
-              "tag": "14.0.0",
-              "commit": "a91631b260cba3f22858d6c6827511e636c2458a",
-              "dest": "third_party/glslang"
+              "commit": "efd24d75bcbc55620e759f6bf42c45a32abac5f8",
+              "dest": "third_party/glslang",
+              "x-checker-data": {
+                "type": "git",
+                "tag-pattern": "^(\\d{1,2}\\.\\d{1,2}\\.\\d{1,4})$"
+              }
             }
           ]
         }
@@ -182,7 +180,7 @@
       ]
     },
     "shared-modules/intltool/intltool-0.51.json",
-    "libayatana-appindicator3-0.1.yml",
+    "shared-modules/libayatana-appindicator/libayatana-appindicator-gtk3.json",
     {
       "name": "libjson",
       "buildsystem": "meson",
@@ -251,7 +249,12 @@
         "install apply_extra ${FLATPAK_DEST}/bin",
         "install s3drive.sh ${FLATPAK_DEST}/bin/s3drive",
         "install -Dm644 io.kapsa.drive.metainfo.xml ${FLATPAK_DEST}/share/appdata/${FLATPAK_ID}.metainfo.xml",
-        "install -Dm644 s3drive_logo.png ${FLATPAK_DEST}/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.png",
+        "install -Dm644 icon_22.png ${FLATPAK_DEST}/share/icons/hicolor/22x22/apps/${FLATPAK_ID}.png",
+        "install -Dm644 icon_32.png ${FLATPAK_DEST}/share/icons/hicolor/32x32/apps/${FLATPAK_ID}.png",
+        "install -Dm644 icon_128.png ${FLATPAK_DEST}/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.png",
+        "install -Dm644 icon_256.png ${FLATPAK_DEST}/share/icons/hicolor/256x256@2/apps/${FLATPAK_ID}.png",
+        "install -Dm644 icon.svg ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg",
+        "gtk-update-icon-cache -f -t ${FLATPAK_DEST}/share/icons/hicolor",
         "install -Dm644 io.kapsa.drive.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop",
         "install -Dm755 /usr/bin/ar -t ${FLATPAK_DEST}/bin",
         "install -Dm755 /usr/lib/$(gcc -print-multiarch)/libbfd-*.so -t ${FLATPAK_DEST}/lib",
@@ -288,7 +291,23 @@
         },
         {
           "type": "file",
-          "path": "s3drive_logo.png"
+          "path": "icon_22.png"
+        },
+        {
+          "type": "file",
+          "path": "icon_32.png"
+        },
+        {
+          "type": "file",
+          "path": "icon_128.png"
+        },
+        {
+          "type": "file",
+          "path": "icon_256.png"
+        },
+        {
+          "type": "file",
+          "path": "icon.svg"
         },
         {
           "type": "extra-data",
@@ -297,8 +316,8 @@
             "x86_64"
           ],
           "url": "https://github.com/s3drive/deb-app/releases/download/1.15.6/s3drive_amd64.deb",
-          "sha256": "b118b20adc1cf74df8ebe073881ca9b34f16a43f6240376e86b2b83637400e5d",
-          "size": 65761660,
+          "sha256": "ba63d7a09cf0e58fdd5bbd65e2ee1a15e50b600c06f8f791e3c87d6bc04c64d4",
+          "size": 65773738,
           "x-checker-data": {
             "type": "anitya",
             "project-id": 371008,
