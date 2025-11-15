@@ -299,6 +299,10 @@
         },
         {
           "type": "file",
+          "path": "icon_32_pending.png"
+        },
+        {
+          "type": "file",
           "path": "icon_128.png"
         },
         {
