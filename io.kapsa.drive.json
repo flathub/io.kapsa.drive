@@ -299,6 +299,10 @@
         },
         {
           "type": "file",
+          "path": "icon_32_pending.png"
+        },
+        {
+          "type": "file",
           "path": "icon_128.png"
         },
         {
@@ -315,9 +319,9 @@
           "only-arches": [
             "x86_64"
           ],
-          "url": "https://github.com/s3drive/deb-app/releases/download/1.15.6/s3drive_amd64.deb",
-          "sha256": "ba63d7a09cf0e58fdd5bbd65e2ee1a15e50b600c06f8f791e3c87d6bc04c64d4",
-          "size": 65773738,
+          "url": "https://github.com/s3drive/deb-app/releases/download/1.15.7/s3drive_amd64.deb",
+          "sha256": "90f83c70ec37bd0e7d188b423fc2c7f240676a9bef1ce29cbdc524ea6f56ec0b",
+          "size": 65808070,
           "x-checker-data": {
             "type": "anitya",
             "project-id": 371008,
