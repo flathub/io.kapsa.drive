@@ -221,8 +221,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/jedisct1/libsodium/archive/1.0.18-RELEASE.tar.gz",
-          "sha256": "b7292dd1da67a049c8e78415cd498ec138d194cfdb302e716b08d26b80fecc10"
+          "url": "https://github.com/jedisct1/libsodium/releases/download/1.0.21-RELEASE/libsodium-1.0.21.tar.gz",
+          "sha256": "9e4285c7a419e82dedb0be63a72eea357d6943bc3e28e6735bf600dd4883feaf"
         }
       ],
       "post-install": [
