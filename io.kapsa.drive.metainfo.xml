@@ -1,61 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop-application">
   <id>io.kapsa.drive</id>
+  <metadata_license>CC0</metadata_license>
+  <project_license>LicenseRef-proprietary</project_license>
   <name>S3Drive</name>
   <summary>Convert S3, SFTP, WebDAV or Rclone back-end into your encrypted storage</summary>
-  <developer_name>S3Drive</developer_name>
+  <developer id="app.s3drive">
+    <name>S3Drive</name>
+  </developer>
   <url type="homepage">https://s3drive.app</url>
   <url type="faq">https://s3drive.app/faq</url>
   <url type="contact">https://discord.com/invite/YvxvypRqCu</url>
   <url type="bugtracker">https://discord.com/invite/YvxvypRqCu</url>
   <url type="help">https://docs.s3drive.app/setup/providers</url>
-  <metadata_license>CC0</metadata_license>
-  <project_license>LicenseRef-proprietary</project_license>
+  <launchable type="desktop-id">io.kapsa.drive.desktop</launchable>
+  <content_rating type="oars-1.1"/>
   <supports>
     <control>pointing</control>
     <control>keyboard</control>
     <control>touch</control>
   </supports>
-  <!--  Search:   (.+)\n-->
-  <!--  Replace:  <p>$1</p>\n-->
   <description>
-    <p>
-            S3Drive is an easy-to-use software client that converts vast range of protocols (S3, WebDav, FTP etc.) and cloud providers into your personal encrypted file storage with comprehensive syncing and backup options.
-        </p>
-    <p>
-            There are dozens of providers where you can get a free tier account. You can then decide to pay only for additionally used storage or you can fully control your storage by self-hosting S3 or any other back-end.
-        </p>
-    <p>
-            You can start with the simplest option and make adjustments whenever you're ready. Your files are encrypted before they leave your device, so no one beside you can access them. Not even us.
-        </p>
-    <p>
-            Features: Rclone compatible E2E encryption, Drive mount, Sync modes (copy, move, sync, two-way), Content and filename encryption, Secure sharing via encrypted link, Multiple accounts support, Manage files &amp; directories (open, preview, download, copy, delete, rename, folder upload etc.), Preview different file formats (pdf, markdown, txt, audio, video), Simple text editor, Search within directories, Object Lock support, File versioning (delete &amp; restore), Light and dark themes
-        </p>
-    <p>
-            Supported protocols: S3, WebDAV, SFTP, SMB, FTP, HTTP
-        </p>
-    <p>
-            Personal storage: Google Drive, Google Photos, Dropbox, Box, Microsoft OneDrive, pCloud, Proton Drive, Koofr
-        </p>
-    <p>
-            S3 clouds: AWS S3, Backblaze B2, Synology C2, Cloudflare R2, Google Cloud Storage, Wasabi, Linode, IDrive e2, Storj, Scaleway, DigitalOcean Spaces&#13;
-            Self-hosted: MinIO, SeaweedFS, GarageFS, Openstack Swift S3, Ceph, Zenko CloudServer&#13;
-            Visit our Docs for full list of supported providers.&#13;
-        </p>
-    <p>
-            Available on: Android, iOS, macOS, Windows, Linux, Web
-        </p>
-    <p>
-            If you like what we're doing and would like to support us, please consider upgrading your plan and leave us a review if you haven't already.
-        </p>
-    <p>
-            Other providers: 1Fichier, Akamai Netstorage, Citrix ShareFile, Digi Storage, Enterprise File Fabric, HiDrive, Internet Archive, Jottacloud, Linkbox, Mail.ru Cloud, Mega, Rackspace Cloudfiles, Memset Memstore, OpenDrive, Oracle Object Storage, PikPak, premiumize.me, put.io, QingStor, Quatrix by Maytech, Sia, Storj, SugarSync, Uptobox, Yandex Disk, Zoho WorkDrive
-        </p>
-    <p>
-            Other providers (S3): AWS Snowball Edge, Dreamhost, Huawei OBS, IBM COS (S3), Storadera, Xaweho.de, Petabox, IONOS Cloud, Qiniu Cloud Object Storage (Kodo), RackCorp, Seagate Lyve Cloud, Alibaba OSS, China Mobile Ecloud Elastic Object Storage (EOS), Leviia Cloud Object Storage, Liara, ArvanCloud, Tencent COS, Netease NOS
-        </p>
+    <p>S3Drive is an easy-to-use software client that converts vast range of protocols (S3, WebDav, FTP etc.)
+      and cloud providers into your personal encrypted file storage with comprehensive syncing and backup options.
+    </p>
+    <p>There are dozens of providers where you can get a free tier account. You can then decide to pay only for additionally
+      used storage or you can fully control your storage by self-hosting S3 or any other back-end.
+    </p>
+    <p>You can start with the simplest option and make adjustments whenever you're ready. Your files are encrypted before
+      they leave your device, so no one beside you can access them. Not even us.</p>
+    <p>Features: Rclone compatible E2E encryption, Drive mount, Sync modes (copy, move, sync, two-way),
+      Content and filename encryption, Secure sharing via encrypted link, Multiple accounts support,
+      Manage files &amp; directories (open, preview, download, copy, delete, rename, folder upload etc.),
+      Preview different file formats (pdf, markdown, txt, audio, video), Simple text editor, Search within directories,
+      Object Lock support, File versioning (delete &amp; restore), Light and dark themes
+    </p>
+    <p>Supported protocols: S3, WebDAV, SFTP, SMB, FTP, HTTP</p>
+    <p>Personal storage: Google Drive, Google Photos, Dropbox, Box, Microsoft OneDrive, pCloud, Proton Drive, Koofr</p>
+    <p>S3 clouds: AWS S3, Backblaze B2, Synology C2, Cloudflare R2, Google Cloud Storage, Wasabi, Linode, IDrive e2, Storj,
+      Scaleway, DigitalOcean Spaces</p>
+    <p>Self-hosted: MinIO, SeaweedFS, GarageFS, Openstack Swift S3, Ceph, Zenko CloudServer</p>
+    <p>Visit our Docs for full list of supported providers.</p>
+    <p>Available on: Android, iOS, macOS, Windows, Linux, Web</p>
+    <p>If you like what we're doing and would like to support us, please consider upgrading your plan and leave us
+      a review if you haven't already.</p>
+    <p>Other providers: 1Fichier, Akamai Netstorage, Citrix ShareFile, Digi Storage, Enterprise File Fabric, HiDrive,
+      Internet Archive, Jottacloud, Linkbox, Mail.ru Cloud, Mega, Rackspace Cloudfiles, Memset Memstore, OpenDrive,
+      Oracle Object Storage, PikPak, premiumize.me, put.io, QingStor, Quatrix by Maytech, Sia, Storj, SugarSync, Uptobox,
+      Yandex Disk, Zoho WorkDrive</p>
+    <p>Other providers (S3): AWS Snowball Edge, Dreamhost, Huawei OBS, IBM COS (S3), Storadera, Xaweho.de, Petabox,
+      IONOS Cloud, Qiniu Cloud Object Storage (Kodo), RackCorp, Seagate Lyve Cloud, Alibaba OSS, China Mobile Ecloud
+      Elastic Object Storage (EOS), Leviia Cloud Object Storage, Liara, ArvanCloud, Tencent COS, Netease NOS</p>
   </description>
-  <launchable type="desktop-id">io.kapsa.drive.desktop</launchable>
   <screenshots>
     <screenshot type="default">
       <image>https://s3drive.app/images/desktop/photo_tiles.png</image>
@@ -85,7 +81,6 @@
       <image>https://s3drive.app/images/desktop/show_info.png</image>
     </screenshot>
   </screenshots>
-  <content_rating type="oars-1.1"/>
   <releases>
     <release version="1.17.7" date="2026-05-03"/>
     <release version="1.17.5" date="2026-04-26"/>
