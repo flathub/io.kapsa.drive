@@ -45,8 +45,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/libass/libass/releases/download/0.17.2/libass-0.17.2.tar.xz",
-          "sha256": "e8261b51d66ba933fe99248c6fdd8767ed96c5a7e5363c83992c735a2c2fbf74",
+          "url": "https://github.com/libass/libass/releases/download/0.17.4/libass-0.17.4.tar.xz",
+          "sha256": "78f1179b838d025e9c26e8fef33f8092f65611444ffa1bfc0cfac6a33511a05a",
           "x-checker-data": {
             "type": "anitya",
             "project-id": 1560,
@@ -83,8 +83,8 @@
         {
           "type": "git",
           "url": "https://code.videolan.org/videolan/libplacebo.git",
-          "tag": "v7.349.0",
-          "commit": "1fd3c7bde7b943fe8985c893310b5269a09b46c5",
+          "tag": "v7.360.1",
+          "commit": "cee9b076f2c63104ccfd497fa79c39a867293ec4",
           "x-checker-data": {
             "type": "git",
             "tag-pattern": "^v([\\d.]+)$"
@@ -132,12 +132,13 @@
             {
               "type": "git",
               "url": "https://github.com/KhronosGroup/glslang.git",
-              "commit": "efd24d75bcbc55620e759f6bf42c45a32abac5f8",
+              "commit": "f0bd0257c308b9a26562c1a30c4748a0219cc951",
               "dest": "third_party/glslang",
               "x-checker-data": {
                 "type": "git",
                 "tag-pattern": "^(\\d{1,2}\\.\\d{1,2}\\.\\d{1,4})$"
-              }
+              },
+              "tag": "16.2.0"
             }
           ]
         }
@@ -165,8 +166,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/mpv-player/mpv/archive/refs/tags/v0.38.0.tar.gz",
-          "sha256": "86d9ef40b6058732f67b46d0bbda24a074fae860b3eaae05bab3145041303066",
+          "url": "https://github.com/mpv-player/mpv/archive/refs/tags/v0.41.0.tar.gz",
+          "sha256": "ee21092a5ee427353392360929dc64645c54479aefdb5babc5cfbb5fad626209",
           "x-checker-data": {
             "type": "anitya",
             "project-id": 5348,
@@ -220,8 +221,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/jedisct1/libsodium/archive/1.0.18-RELEASE.tar.gz",
-          "sha256": "b7292dd1da67a049c8e78415cd498ec138d194cfdb302e716b08d26b80fecc10"
+          "url": "https://github.com/jedisct1/libsodium/releases/download/1.0.21-RELEASE/libsodium-1.0.21.tar.gz",
+          "sha256": "9e4285c7a419e82dedb0be63a72eea357d6943bc3e28e6735bf600dd4883feaf"
         }
       ],
       "post-install": [
@@ -320,9 +321,9 @@
           "only-arches": [
             "x86_64"
           ],
-          "url": "https://github.com/s3drive/deb-app/releases/download/1.15.7/s3drive_amd64.deb",
-          "sha256": "90f83c70ec37bd0e7d188b423fc2c7f240676a9bef1ce29cbdc524ea6f56ec0b",
-          "size": 65808070,
+          "url": "https://github.com/s3drive/deb-app/releases/download/1.17.7/s3drive_amd64.deb",
+          "sha256": "e402c8e6bed86a920453791d60c4127aeb67635a58676d1a455972a3db29b7ff",
+          "size": 68918324,
           "x-checker-data": {
             "type": "anitya",
             "project-id": 371008,
@@ -344,8 +345,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/libfuse/libfuse/releases/download/fuse-3.16.2/fuse-3.16.2.tar.gz",
-          "sha256": "f797055d9296b275e981f5f62d4e32e089614fc253d1ef2985851025b8a0ce87",
+          "url": "https://github.com/libfuse/libfuse/releases/download/fuse-3.18.2/fuse-3.18.2.tar.gz",
+          "sha256": "f01de85717e20adf5f98aff324acd85dd73d61a5ca3834d573dcf0bd6e54a298",
           "x-checker-data": {
             "type": "anitya",
             "project-id": 861,
