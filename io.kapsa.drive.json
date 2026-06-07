@@ -1,7 +1,7 @@
 {
   "app-id": "io.kapsa.drive",
   "runtime": "org.freedesktop.Platform",
-  "runtime-version": "24.08",
+  "runtime-version": "25.08",
   "sdk": "org.freedesktop.Sdk",
   "sdk-extensions": [
     "org.freedesktop.Sdk.Extension.vala"
@@ -39,6 +39,13 @@
     "--talk-name=org.kde.StatusNotifierWatcher",
     "--system-talk-name=org.freedesktop.NetworkManager"
   ],
+  "cleanup": [
+    "/include",
+    "/lib/pkgconfig",
+    "/share/man",
+    "*.la",
+    "*.a"
+  ],
   "modules": [
     {
       "name": "libass",
@@ -61,11 +68,6 @@
           ],
           "dest-filename": "autogen.sh"
         }
-      ],
-      "cleanup": [
-        "/include",
-        "/lib/pkgconfig",
-        "/share"
       ]
     },
     {
@@ -74,10 +76,6 @@
       "config-opts": [
         "-Dvulkan=enabled",
         "-Dshaderc=enabled"
-      ],
-      "cleanup": [
-        "/include",
-        "/lib/pkgconfig"
       ],
       "sources": [
         {
@@ -90,70 +88,10 @@
             "tag-pattern": "^v([\\d.]+)$"
           }
         }
-      ],
-      "modules": [
-        {
-          "name": "shaderc",
-          "buildsystem": "cmake-ninja",
-          "builddir": true,
-          "config-opts": [
-            "-DSHADERC_SKIP_COPYRIGHT_CHECK=ON",
-            "-DSHADERC_SKIP_EXAMPLES=ON",
-            "-DSHADERC_SKIP_TESTS=ON",
-            "-DSPIRV_SKIP_EXECUTABLES=ON",
-            "-DENABLE_GLSLANG_BINARIES=OFF"
-          ],
-          "cleanup": [
-            "/bin",
-            "/include",
-            "/lib/cmake",
-            "/lib/pkgconfig",
-            "/lib/*.a"
-          ],
-          "sources": [
-            {
-              "type": "git",
-              "url": "https://github.com/google/shaderc.git",
-              "tag": "v2025.3",
-              "commit": "8c2e602ce440b7739c95ff3d69cecb1adf6becda"
-            },
-            {
-              "type": "git",
-              "url": "https://github.com/KhronosGroup/SPIRV-Tools.git",
-              "commit": "33e02568181e3312f49a3cf33df470bf96ef293a",
-              "dest": "third_party/spirv-tools"
-            },
-            {
-              "type": "git",
-              "url": "https://github.com/KhronosGroup/SPIRV-Headers.git",
-              "commit": "2a611a970fdbc41ac2e3e328802aed9985352dca",
-              "dest": "third_party/spirv-headers"
-            },
-            {
-              "type": "git",
-              "url": "https://github.com/KhronosGroup/glslang.git",
-              "commit": "f0bd0257c308b9a26562c1a30c4748a0219cc951",
-              "dest": "third_party/glslang",
-              "x-checker-data": {
-                "type": "git",
-                "tag-pattern": "^(\\d{1,2}\\.\\d{1,2}\\.\\d{1,4})$"
-              },
-              "tag": "16.2.0"
-            }
-          ]
-        }
       ]
     },
     {
       "name": "libmpv",
-      "cleanup": [
-        "/share/metainfo",
-        "/share/bash-completion",
-        "/share/zsh",
-        "/share/doc",
-        "/share/icons",
-        "/share/applications"
-      ],
       "buildsystem": "meson",
       "config-opts": [
         "-Dlibmpv=true",
@@ -162,6 +100,14 @@
         "-Dbuild-date=false",
         "-Dcplayer=false",
         "-Dmanpage-build=disabled"
+      ],
+      "cleanup": [
+        "/share/metainfo",
+        "/share/bash-completion",
+        "/share/zsh",
+        "/share/doc",
+        "/share/icons",
+        "/share/applications"
       ],
       "sources": [
         {
@@ -194,49 +140,12 @@
       ]
     },
     {
-      "name": "libsecret",
-      "buildsystem": "meson",
-      "config-opts": [
-        "-Dmanpage=false",
-        "-Dvapi=false",
-        "-Dgtk_doc=false",
-        "-Dintrospection=false"
-      ],
-      "cleanup": [
-        "/bin",
-        "/include",
-        "/lib/pkgconfig",
-        "/share/man"
-      ],
-      "sources": [
-        {
-          "type": "archive",
-          "url": "https://download.gnome.org/sources/libsecret/0.20/libsecret-0.20.5.tar.xz",
-          "sha256": "3fb3ce340fcd7db54d87c893e69bfc2b1f6e4d4b279065ffe66dac9f0fd12b4d"
-        }
-      ]
-    },
-    {
       "name": "libsodium",
       "sources": [
         {
           "type": "archive",
           "url": "https://github.com/jedisct1/libsodium/releases/download/1.0.21-RELEASE/libsodium-1.0.21.tar.gz",
           "sha256": "9e4285c7a419e82dedb0be63a72eea357d6943bc3e28e6735bf600dd4883feaf"
-        }
-      ],
-      "post-install": [
-        "install -Dm644 LICENSE ${FLATPAK_DEST}/share/licenses/libsodium/LICENSE"
-      ]
-    },
-    {
-      "name": "zenity",
-      "buildsystem": "meson",
-      "sources": [
-        {
-          "type": "archive",
-          "url": "https://download.gnome.org/sources/zenity/3.41/zenity-3.41.0.tar.xz",
-          "sha256": "19b676c3510e22badfcc3204062d432ba537402f5e0ae26128c0d90c954037e1"
         }
       ]
     },
@@ -250,12 +159,7 @@
         "install apply_extra ${FLATPAK_DEST}/bin",
         "install s3drive.sh ${FLATPAK_DEST}/bin/s3drive",
         "install -Dm644 io.kapsa.drive.metainfo.xml ${FLATPAK_DEST}/share/appdata/${FLATPAK_ID}.metainfo.xml",
-        "install -Dm644 icon_22.png ${FLATPAK_DEST}/share/icons/hicolor/22x22/apps/${FLATPAK_ID}.png",
-        "install -Dm644 icon_32.png ${FLATPAK_DEST}/share/icons/hicolor/32x32/apps/${FLATPAK_ID}.png",
-        "install -Dm644 icon_128.png ${FLATPAK_DEST}/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.png",
-        "install -Dm644 icon_256.png ${FLATPAK_DEST}/share/icons/hicolor/256x256@2/apps/${FLATPAK_ID}.png",
         "install -Dm644 icon.svg ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg",
-        "gtk-update-icon-cache -f -t ${FLATPAK_DEST}/share/icons/hicolor",
         "install -Dm644 io.kapsa.drive.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop",
         "install -Dm755 /usr/bin/ar -t ${FLATPAK_DEST}/bin",
         "install -Dm755 /usr/lib/$(gcc -print-multiarch)/libbfd-*.so -t ${FLATPAK_DEST}/lib",
@@ -289,26 +193,6 @@
         {
           "type": "file",
           "path": "io.kapsa.drive.desktop"
-        },
-        {
-          "type": "file",
-          "path": "icon_22.png"
-        },
-        {
-          "type": "file",
-          "path": "icon_32.png"
-        },
-        {
-          "type": "file",
-          "path": "icon_32_pending.png"
-        },
-        {
-          "type": "file",
-          "path": "icon_128.png"
-        },
-        {
-          "type": "file",
-          "path": "icon_256.png"
         },
         {
           "type": "file",
