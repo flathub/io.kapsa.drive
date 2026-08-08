@@ -52,8 +52,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/libass/libass/releases/download/0.17.4/libass-0.17.4.tar.xz",
-          "sha256": "78f1179b838d025e9c26e8fef33f8092f65611444ffa1bfc0cfac6a33511a05a",
+          "url": "https://github.com/libass/libass/releases/download/0.17.5/libass-0.17.5.tar.xz",
+          "sha256": "2dca25c0e0c837ddf00b52011b3f82cac1e4ddd3ad018227806b0c2288864acc",
           "x-checker-data": {
             "type": "anitya",
             "project-id": 1560,
@@ -204,9 +204,9 @@
           "only-arches": [
             "x86_64"
           ],
-          "url": "https://github.com/s3drive/deb-app/releases/download/1.18.1/s3drive_amd64.deb",
-          "sha256": "2df12f80e9be1b47015f374ef0b9a32ddd37c7ec2f3f45d11508f5f25e2b2387",
-          "size": 65845610,
+          "url": "https://github.com/s3drive/deb-app/releases/download/1.18.0/s3drive_amd64.deb",
+          "sha256": "a8c710943e738b334b4f93e1a9b7259d14b1353735f0640334ab538c9b0f13a4",
+          "size": 61901320,
           "x-checker-data": {
             "type": "anitya",
             "project-id": 371008,
